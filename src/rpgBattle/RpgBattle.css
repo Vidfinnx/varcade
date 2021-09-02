@@ -1,0 +1,16 @@
+#rpgWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  
+    justify-content: flex-end;
+    align-content: flex-end;
+    background-color: mediumblue;
+    width: 90%;
+    height:50%;
+}
+
+#RpgEnemyHealthBar {
+   margin-left: 67% ;
+   
+}
