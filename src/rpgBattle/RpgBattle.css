@@ -52,3 +52,7 @@ button {
 #vids a:first-of-type {
   margin-bottom: 5px;
 } 
+
+#enemyHealthBar {
+  width: 200px;
+}

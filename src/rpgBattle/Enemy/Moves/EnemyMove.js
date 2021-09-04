@@ -8,7 +8,7 @@ function EnemyMove() {
         <div >
             {
                 EnemyMoves.map(item => (
-                    <button moveName={ item.name } damage={ item.dmg } >
+                    <button key={ item.id } moveName={ item.name } damage={ item.dmg } >
                         { item.name }
                         <br></br>
                         Dmg:  { item.dmg }

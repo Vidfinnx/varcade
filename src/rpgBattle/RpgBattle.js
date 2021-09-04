@@ -27,6 +27,18 @@ const RpgBattle = () => {
         setHeroState({ hp: 200 })
     }, []);
 
+    // Win/Loss condition. Set HP back to full after loss. Will change later
+    useEffect(() => {
+        if (heroState.hp <= 0) {
+            alert('GAMEOVER')
+            setEnemeyState({ hp: 200 })
+            setHeroState({ hp: 200 })
+        } else if (enemyState.hp <= 0) {
+            alert('YOU WIN!')
+            setHeroState({ hp: 200 })
+            setEnemeyState({ hp: 200 })
+        }
+    }, [heroState.hp, enemyState.hp])
 
 
     const handleHeroAttack = (e) => {
@@ -60,19 +72,29 @@ const RpgBattle = () => {
 
     console.log("Sephiroth: " + enemyState.hp + " HP")
     console.log("Cloud: " + heroState.hp + " HP")
+    console.log(RpgEnemyHealthBar.props)
 
+
+    let enemyHpPercent = Math.floor((enemyState.hp / 200) * 100)
+    const testData = [
+        { bgcolor: "#6a1b9a", completed: enemyHpPercent },
+
+    ];
 
     return (
 
         <div id="rpgWrapper">
             <div id="RpgEnemyHealthBar">
                 <Enemy />
-                <RpgEnemyHealthBar />
+
             </div>
 
             <Hero />
-            <RpgHeroHealthBar />
-            {/* <button className="atkBtn" onClick={ handleHeroAttack }>Cut</button> */ }
+
+            { testData.map((item, idx) => (
+                <RpgEnemyHealthBar key={ idx } bgcolor={ item.bgcolor } completed={ item.completed } id="enemyHealthBar" />
+            )) }
+
             <div id="moveDiv" onClick={ handleHeroAttack }>
                 <Move />
             </div>
