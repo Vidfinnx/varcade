@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import RpgHeroHealthBar from './Hero/RpgHeroHealthBar'
 import RpgEnemyHealthBar from './Enemy/RpgEnemyHealthBar'
 import Move from './Hero/Moves/Move'
+import enemyMoves from './Enemy/Moves/EnemyMoves'
 // import HeroMoves from './Hero/Moves/HeroMoves'
 
 
@@ -26,6 +27,8 @@ const RpgBattle = () => {
         setHeroState({ hp: 200 })
     }, []);
 
+
+
     const handleHeroAttack = (e) => {
         e.preventDefault()
         let moveName = e.target.getAttribute("moveName")
@@ -37,26 +40,28 @@ const RpgBattle = () => {
         setEnemeyState({ hp: total })
         console.log("Cloud used " + moveName + " for " + moveDmg + " damage!")
 
-        // handleEnemyAttack()
+        // need to set time out here
+        randomEnemyAtk()
     }
 
-    // const handleEnemyAttack = (e) => {
+    const randomEnemyAtk = () => {
+        let chosenEnemyMove = enemyMoves[Math.floor((Math.random() * enemyMoves.length))]
 
-    //     let moveName = "random move name"
-    //     let moveDmg = "random move"
 
-    //     // let heroHp = heroState.hp
-    //     // let total = heroHp - moveDmg
+        let heroHp = heroState.hp
+        let total = heroHp - chosenEnemyMove.dmg
 
-    //     setHeroState({ hp: total })
-    //     console.log("Sephiroth used " + moveName + " for " + moveDmg + " damage!")
-    // }
+        setHeroState({ hp: total })
 
+        console.log("Sephiroth used " + chosenEnemyMove.name + " for " + chosenEnemyMove.dmg + " damage!")
+    }
 
 
 
     console.log("Sephiroth: " + enemyState.hp + " HP")
     console.log("Cloud: " + heroState.hp + " HP")
+
+
     return (
 
         <div id="rpgWrapper">
