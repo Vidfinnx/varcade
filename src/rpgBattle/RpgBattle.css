@@ -1,35 +1,20 @@
+body{
+  background-color: black;
+}
+
 #rpgWrapper {
-    display: inline-flex;
-    flex-direction: column; 
-  flex-wrap:nowrap;
+display: absolute;
+background-repeat: no-repeat;
+background-size:cover;
+  background-image:url("./Assets/Images/rpgBackground.png");
 
 
-
-
-    background-color: mediumblue;
-    width: 90%;
-    height:50%;
+  width: 828px;
+  height:293px;
 }
 
 /* use percentages for */
 
-.progress-bar {
-
-  height: 20px;
-  width: 200px;
-  border-radius: 50px;
-  border: 1px solid #333;
-  margin-left: 85px;  
-  margin-bottom: 20px;
-}
-
-.filler {
-    
-  background: #b815ce;
-  height: 100%;
-  border-radius: inherit;
-  transition: width .2s ease-in;
-}
 
 button {
   margin-right: 10px;
@@ -42,17 +27,44 @@ button {
   outline: 0;
 } */
 
- #vids {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#vids a:first-of-type {
-  margin-bottom: 5px;
-} 
 
 #enemyHealthBar {
   width: 200px;
+
 }
+
+#RpgEnemyHealthBar {
+ width: 200px;
+position: absolute;
+width: 197px;
+height: 11px;
+left: 533px;
+top: 224px;
+}
+
+#RpgHeroHealthBar {
+  
+ width: 100px;
+ position: absolute;
+width: 100px;
+height: 10px;
+left: 125px;
+top: 175px;
+}
+
+#heroSpot {
+
+position: absolute;
+width: 115px;
+height: 117px;
+left: 110px;
+top: 71px;
+}
+#moveDiv {
+
+}
+
+#enemySpot {
+
+}
+

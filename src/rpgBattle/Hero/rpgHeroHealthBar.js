@@ -1,48 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
 
-class RpgHeroHealthBar extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            percentage: 100
-        }
-
-        this.nextStep = this.nextStep.bind(this)
+const RpgHeroHealthBar = (props) => {
+    const { bgcolor, completed } = props;
+    const containerStyles = {
+        height: 20,
+        width: '100%',
+        backgroundColor: "#e0e0de",
+        borderRadius: 50,
+        margin: 50
     }
 
-    nextStep() {
-        if (this.state.percentage === 100) return
-        this.setState(prevState => ({ percentage: prevState.percentage + 20 }))
+    const fillerStyles = {
+        height: '100%',
+        width: `${completed}%`,
+        backgroundColor: bgcolor,
+        borderRadius: 'inherit',
+        textAlign: 'right'
     }
 
-    render() {
-        return (
-            <div>
+    const labelStyles = {
+        padding: 5,
+        color: 'white',
+        fontWeight: 'bold'
+    }
 
-                <ProgressBar percentage={ this.state.percentage } />
-
-
+    return (<div id="enemyHealthBar">
+        <div style={ containerStyles }>
+            <div style={ fillerStyles }>
+                <span style={ labelStyles }>{ `${completed}%` }</span>
             </div>
-        )
-    }
-}
+        </div></div>
 
-const ProgressBar = (props) => {
-    return (
-        <div className="progress-bar">
-            <Filler percentage={ props.percentage } />
-        </div>
-    )
-}
+    );
+};
 
-const Filler = (props) => {
-    return <div className="filler" style={ { width: `${props.percentage}%` } } />
-}
-
-// ReactDOM.render(
-//     <ProgressBarExample />,
-//     document.querySelector('#app')
-// )
-
-export default RpgHeroHealthBar
+export default RpgHeroHealthBar;
