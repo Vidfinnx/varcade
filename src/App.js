@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Archeader/>
        <Cabinet/>
-       <Touchcontrols/>
+       {/* <Touchcontrols/> */}
   </div>
   );
 }
