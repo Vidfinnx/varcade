@@ -7,7 +7,17 @@ const HeroMoves = [
     {
         id: 2,
         name: "Slash",
+        dmg: 30
+    },
+    {
+        id: 3,
+        name: "Omni-Slash",
         dmg: 50
+    },
+    {
+        id: 4,
+        name: "Braver",
+        dmg: 70
     },
 ]
 

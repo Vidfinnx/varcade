@@ -7,14 +7,29 @@ import RpgEnemyHealthBar from './Enemy/RpgEnemyHealthBar'
 import Move from './Hero/Moves/Move'
 import enemyMoves from './Enemy/Moves/EnemyMoves'
 // import HeroMoves from './Hero/Moves/HeroMoves'
-import GameStart from './GameStart'
-
+// import GameStart from './GameStart'
+import CenterText from './Assets/CenterText'
 
 
 
 const RpgBattle = () => {
 
+    // Here is the score to be sent to the DB.
+    // I am thinking of creating a 'sendScore()' function to get the
+    // user name and send 'scoreText.score' to the DB. 
+    // The 'sendScore()' will be invoked when the round ends on win/loss 
+    // I can also
 
+    const [scoreText, setScoreText] = useState({
+        score: 0
+    })
+
+    const [heroText, setHeroText] = useState({
+        text: undefined
+    })
+    const [enemyText, setEnemyText] = useState({
+        text: undefined
+    })
     const [heroState, setHeroState] = useState({
         name: 'Cloud',
         hp: 200,
@@ -28,21 +43,27 @@ const RpgBattle = () => {
     useEffect(() => {
         setEnemeyState({ hp: 200 })
         setHeroState({ hp: 200 })
+        setScoreText({ score: 0 })
     }, []);
 
-
-
-
-    // Win/Loss condition. Set HP back to full after loss. Will change later
+    // Win/Loss condition. Set HP back to full after loss. 
     useEffect(() => {
         if (heroState.hp <= 0) {
-            alert('GAMEOVER')
+            alert(`You were defeated... Your score was ${scoreText.score}... what a shame!`)
             setEnemeyState({ hp: 200 })
             setHeroState({ hp: 200 })
+            setScoreText({ score: 0 })
+            setHeroText({ text: null })
+            setEnemyText({ text: null })
+            // sendScore() will go here.
+
         } else if (enemyState.hp <= 0) {
-            alert('YOU WIN!')
+            alert(`Victory! Sephiroth has been eliminated. Your score of ${scoreText.score} has been submitted!`)
             setHeroState({ hp: 200 })
             setEnemeyState({ hp: 200 })
+            setScoreText({ score: 0 })
+            setHeroText({ text: null })
+            setEnemyText({ text: null })
         }
     }, [heroState.hp, enemyState.hp])
 
@@ -57,7 +78,15 @@ const RpgBattle = () => {
 
         setEnemeyState({ hp: total })
 
-        console.log("Cloud used " + moveName + " for " + moveDmg + " damage!")
+        let addScore = scoreText.score + 1
+
+        setScoreText({ score: addScore })
+
+        setHeroText({
+            text: "Cloud used " + moveName + " for " + moveDmg + " damage!"
+        })
+
+
 
         // need to set time out here
         randomEnemyAtk()
@@ -72,6 +101,10 @@ const RpgBattle = () => {
         setHeroState({ hp: total })
 
         console.log("Sephiroth used " + chosenEnemyMove.name + " for " + chosenEnemyMove.dmg + " damage!")
+
+        setEnemyText({
+            text: "Sephiroth used " + chosenEnemyMove.name + " for " + chosenEnemyMove.dmg + " damage!"
+        })
     }
 
     console.log("Sephiroth: " + enemyState.hp + " HP")
@@ -82,11 +115,11 @@ const RpgBattle = () => {
     let heroHpPercent = Math.floor((heroState.hp / 200) * 100)
 
     const enemyHp = [
-        { bgcolor: "#6a1b9a", completed: enemyHpPercent },
+        { bgcolor: "#DB00FF", completed: enemyHpPercent },
 
     ];
     const heroHp = [
-        { bgcolor: "#6a1b9a", completed: heroHpPercent },
+        { bgcolor: "#E32626", completed: heroHpPercent },
 
     ];
 
@@ -101,22 +134,38 @@ const RpgBattle = () => {
             </div>
             <div id="RpgHeroHealthBar">
                 { heroHp.map((item, idx) => (
-                    <RpgHeroHealthBar key={ idx } bgcolor={ item.bgcolor } completed={ item.completed } id="heroHealthBar" />
+                    <RpgHeroHealthBar heroHps={ heroState.hp } key={ idx } bgcolor={ item.bgcolor } completed={ item.completed } id="heroHealthBar" />
                 )) }
             </div>
-            <div id="moveDiv" onClick={ handleHeroAttack }>
-                <Move />
+            <div id="moveDiv" >
+                <div id="heroMoveDiv" onClick={ handleHeroAttack }>
+                    <Move onClick={ console.log('hi') } />
+
+                </div>
+
             </div>
+
+
+            {/* CENTER TEXT AREA */ }
+            <div id="centralTextArea">
+                <CenterText characterName={ heroText.text } damage={ enemyText.text } />
+            </div>
+
+            <div id="scoreDiv">
+                Score:  { scoreText.score }
+            </div>
+
 
 
             {/* ENEMY */ }
             <div id="enemySpot">
                 <Enemy />
+
             </div>
             <div id="RpgEnemyHealthBar">
                 { enemyHp.map((item, idx) => (
 
-                    <RpgEnemyHealthBar key={ idx } bgcolor={ item.bgcolor } completed={ item.completed } id="enemyHealthBar" />
+                    <RpgEnemyHealthBar enemyHps={ enemyState.hp } key={ idx } bgcolor={ item.bgcolor } completed={ item.completed } id="enemyHealthBar" />
 
                 )) }
             </div>

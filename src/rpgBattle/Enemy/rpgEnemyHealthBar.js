@@ -1,11 +1,11 @@
 import React from "react";
 
 const RpgEnemyHealthBar = (props) => {
-    const { bgcolor, completed } = props;
+    const { bgcolor, completed, enemyHps } = props;
     const containerStyles = {
         height: 20,
         width: '100%',
-        backgroundColor: "#e0e0de",
+        backgroundColor: "#000000",
         borderRadius: 50,
         margin: 50
     }
@@ -27,7 +27,7 @@ const RpgEnemyHealthBar = (props) => {
     return (<div id="enemyHealthBar">
         <div style={ containerStyles }>
             <div style={ fillerStyles }>
-                <span style={ labelStyles }>{ `${completed}%` }</span>
+                <span style={ labelStyles }>{ `${enemyHps}` }</span>
             </div>
         </div></div>
 
