@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image'
-import Arctop  from './images/catop.png'
+import Arctop  from '../images/catop.png'
 
 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image'
 import Snakegame from './Snakegame'
-import Arcbottom  from './images/cabottom.png'
+import Arcbottom  from '../images/cabottom.png'
 
 
 
