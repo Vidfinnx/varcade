@@ -1,35 +1,43 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
-  if (token == null) return res.sendStatus(401); 
+const secret = 'mysecretsshhhhh';
+const expiration = '2h';
 
-  jwt.verify(token, process.env.USERFRONT_PUBLIC_KEY, (err, auth) => {
-    if (err) return res.sendStatus(403); 
-    req.auth = auth;
-    next();
-  });
-}
+module.exports = {
+  authMiddleware: function ({ req }) {
+    let token = req.body.token || req.query.token || req.headers.authorization;
 
-console.log(req.auth);
+    if (req.headers.authorization) {
+      token = token
+        .split(' ')
+        .pop()
+        .trim();
+    }
+
+    console.log("token", token)
 
 
-// {
-//   mode: 'test',
-//   tenantId: 'demo1234',
-//   userId: 5,
-//   userUuid: 'ab53dbdc-bb1a-4d4d-9edf-683a6ca3f609',
-//   isConfirmed: false,
-//   authorization: {
-//     demo1234: {
-//       tenantId: 'demo1234',
-//       name: 'Demo project',
-//       roles: ["admin"],
-//       permissions: []
-//     },
-//   },
-//   sessionId: '35d0bf4a-912c-4429-9886-cd65a4844a4f',
-//   iat: 1614114057,
-//   exp: 1616706057
-// }
+    if (!token) {
+      return req;
+    }
+
+    try {
+      const { data } = jwt.verify(token, secret, { maxAge: expiration });
+      req.user = data;
+    }
+    catch {
+      console.log('Invalid token');
+    }
+
+    return req;
+  },
+  signToken: function ({ firstName, email, _id }) {
+    const payload = { firstName, email, _id };
+
+    return jwt.sign(
+      { data: payload },
+      secret,
+      { expiresIn: expiration }
+    );
+  }
+};

@@ -4,6 +4,8 @@ const typeDefs = gql`
   type User {
     _id: ID!
     name: String!
+    email: String
+    scores: [Score]
   }
 
   type Score {
@@ -18,6 +20,7 @@ const typeDefs = gql`
 
   type Mutation {
     createScore(user1: String!, user2: String!): Score
+    login(email: String!, password: String!): Auth
   }
 `;
 

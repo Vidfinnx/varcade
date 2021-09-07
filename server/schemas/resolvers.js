@@ -1,29 +1,51 @@
 const { User, Score } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../auth/auth');
 
 const resolvers = {
   Query: {
-    user: async () => {
-      return User.find({});
+    user: async (parent, args, context) => {
+      if(context.user){
+        const user = await User.findById(context.user._id).populate({
+          path: 'orders.products',
+          populate: 'category',
+        });
+        user.orders.sort((a,b) => {b.purchaseDate-a.purchaseDate});
+        return user;
+      }
+      throw new AuthenticationError("Not Logged In!")
     },
-    score: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Score.find(params);
+  Mutation:  {
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
     },
-  },
-  Mutation: {
+    
     createScore: async (parent, args) => {
       const score = await Score.create(args);
       return score;
     },
-    // createScore2: async (parent, { _id, techNum }) => {
-    //   const score2 = await Score2.findOneAndUpdate(
-    //     { _id },
-    //     { $inc: { [`Score${scoreNum}`]: 1 } },
-    //     { new: true }
-    //   );
-    //   return score2;
-    // },
-  },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    }
+  }
+} 
 };
 
 module.exports = resolvers;
