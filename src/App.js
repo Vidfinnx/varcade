@@ -5,7 +5,7 @@ import RpgBattle from './rpgBattle/RpgBattle'
 
 function App() {
   return (
-    <RpgBattle />
+    
   );
 }
 
