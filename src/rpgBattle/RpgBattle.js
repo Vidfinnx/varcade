@@ -18,7 +18,7 @@ const RpgBattle = () => {
     // I am thinking of creating a 'sendScore()' function to get the
     // user name and send 'scoreText.score' to the DB. 
     // The 'sendScore()' will be invoked when the round ends on win/loss 
-    // I can also
+
 
     const [scoreText, setScoreText] = useState({
         score: 0
@@ -65,7 +65,7 @@ const RpgBattle = () => {
             setHeroText({ text: null })
             setEnemyText({ text: null })
         }
-    }, [heroState.hp, enemyState.hp])
+    }, [heroState.hp, enemyState.hp, scoreText.score])
 
 
     const handleHeroAttack = (e) => {
@@ -99,8 +99,6 @@ const RpgBattle = () => {
         let total = heroHp - chosenEnemyMove.dmg
 
         setHeroState({ hp: total })
-
-        console.log("Sephiroth used " + chosenEnemyMove.name + " for " + chosenEnemyMove.dmg + " damage!")
 
         setEnemyText({
             text: "Sephiroth used " + chosenEnemyMove.name + " for " + chosenEnemyMove.dmg + " damage!"
