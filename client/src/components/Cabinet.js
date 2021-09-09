@@ -14,9 +14,13 @@ import Toplogo from '../images/catop.png'
 export default function  Cabinet() {
     return (
         <div className="arcadebottom">
-            <Image id="toplogo" src={Toplogo} fluid></Image>   
-            <Snakegame/>
-            <Image id="joysticks" src={Arcbottom} fluid></Image>   
+            <div className="top">
+            <Image id="toplogo" src={Toplogo} fluid></Image>
+            </div>
+            <Snakegame/> 
+            <div className="bottom">
+            <Image id="joysticks" src={Arcbottom} fluid></Image>
+              </div>
         </div>
     )
 }
