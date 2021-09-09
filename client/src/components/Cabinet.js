@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image'
-import Snakegame from './games/Snakegame'
+import Pacman from './games/Pacman'
 import Arcbottom  from '../images/joysticks.png'
 import Toplogo from '../images/catop.png'
 
@@ -17,7 +17,7 @@ export default function  Cabinet() {
             <div className="top">
             <Image id="toplogo" src={Toplogo} fluid></Image>
             </div>
-            <Snakegame/> 
+            <Pacman/> 
             <div className="bottom">
             <Image id="joysticks" src={Arcbottom} fluid></Image>
               </div>
