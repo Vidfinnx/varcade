@@ -1,10 +1,15 @@
 import React from "react";
 
 
+
+
+
  
 
-  const Pacman = () => {
+  const Thegame = () => {
 
+
+    
 
   
   
@@ -20,16 +25,16 @@ import React from "react";
 
 
 
-  function IFocus() {
- document.getElementsByTagName("iframe")[0].focus();
-};
-window.setInterval(IFocus, 300);
+//   function IFocus() {
+//  document.getElementsByTagName("iframe")[0].focus();
+// };
+// window.setInterval(IFocus, 300);
 
   return (
-    <div style={{zIndex: "3"}} className="snakegame">
-      <iframe scrolling = "no" title="games" src="https://cdn.htmlgames.com/MsTapman/"></iframe>
+    <div  className="gamecontainer">
+      <iframe id="game" className="responsive-iframe"scrolling = "no" title="games" src="/dist/index.html"></iframe>
     </div>
   );
 }
 
-export default Pacman;
+export default Thegame;
