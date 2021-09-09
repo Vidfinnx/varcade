@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image'
-import Snakegame from './Snakegame'
-import Arcbottom  from '../images/cabottom.png'
+import Snakegame from './games/Snakegame'
+import Arcbottom  from '../images/joysticks.png'
+import Toplogo from '../images/catop.png'
 
 
 
@@ -13,8 +14,9 @@ import Arcbottom  from '../images/cabottom.png'
 export default function  Cabinet() {
     return (
         <div className="arcadebottom">
+            <Image id="toplogo" src={Toplogo} fluid></Image>   
             <Snakegame/>
-            <Image style={{position: "absolute", left: "0",zIndex: "-1", top: "0"}} src={Arcbottom} fluid></Image>   
+            <Image id="joysticks" src={Arcbottom} fluid></Image>   
         </div>
     )
 }

@@ -11,6 +11,7 @@ import Archeader from "./components/Archeader";
 import Cabinet from "./components/Cabinet";
 // import Touchcontrols from "./components/Touchcontrols";
 // import Background from "./components/background";
+
 // import {Router} from "react router";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Signup from "./pages/Signup";

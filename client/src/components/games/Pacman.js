@@ -3,7 +3,7 @@ import React from "react";
 
  
 
-  const Snakegame = () => {
+  const Pacman = () => {
 
 
   
@@ -27,9 +27,9 @@ window.setInterval(IFocus, 300);
 
   return (
     <div style={{zIndex: "3"}} className="snakegame">
-      <iframe scrolling = "no" title="games" src="http://vsnake.herokuapp.com"></iframe>
+      <iframe scrolling = "no" title="games" src="https://cdn.htmlgames.com/MsTapman/"></iframe>
     </div>
   );
 }
 
-export default Snakegame;
+export default Pacman;
