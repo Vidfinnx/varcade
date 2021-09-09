@@ -7,7 +7,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Archeader from "./components/Archeader";
+
 import Cabinet from "./components/Cabinet";
 // import Touchcontrols from "./components/Touchcontrols";
 // import Background from "./components/background";
@@ -44,23 +44,26 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      {/* <Background> */}
       <Router>
-        <Navbar />
-        <Archeader />
+        
 
         <Switch>
           <Route exact path="/">
+            <Navbar />
             <Home />
           </Route>
           <Route exact path="/signup">
+          <Navbar />
             <Signup />
+            <Home />
           </Route>
 
           <Route exact path="/login">
+          <Navbar />
             <Login />
+            <Home />
           </Route>
-
+          
           <Route exact path="/game1">
             <Cabinet />
             {/* <Touchcontrols/> */}
@@ -69,7 +72,6 @@ function App() {
           <Route exact path="*" redirect="/" />
         </Switch>
       </Router>
-      {/* </Background> */}
     </ApolloProvider>
   );
 }
