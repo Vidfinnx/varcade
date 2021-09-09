@@ -3,6 +3,7 @@ import React from "react";
 
 
 
+
  
 
   const Snakegame = () => {
@@ -31,7 +32,7 @@ import React from "react";
 
   return (
     <div  className="snakegame">
-      <iframe id="game" className="responsive-iframe"scrolling = "no" title="games" src="https://vidfinnx.github.io/vpacman/"></iframe>
+      <iframe id="game" className="responsive-iframe"scrolling = "no" title="games" src="/dist/index.html"></iframe>
     </div>
   );
 }
