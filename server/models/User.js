@@ -1,7 +1,7 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
-const scoreSchema = new Schema({
-  user: {
+const userSchema = new Schema({
+  username: {
     type: String,
     required: true,
   },
@@ -15,6 +15,6 @@ const scoreSchema = new Schema({
   },
 });
 
-const Score = model('Score', scoreSchema);
+const User = model("User", userSchema);
 
-module.exports = Score;
+module.exports = User;
