@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+body{
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Press Start 2P';
+}
+#rpgWrapper {
+display: absolute;
+background-repeat: no-repeat;
+background-size:cover;
+  background-image:url("./Assets/Images/rpgBackground.png");
+
+
+  width: 828px;
+  height:293px;
+}
+
+/* use percentages for */
+
+
+button {
+  margin-right: 10px;
+  padding: 7px 12px;
+  font-size: 14px;
+  background: #d14836;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  outline: 0;
+} */
+
+
+#enemyHealthBar {
+  width: 200px;
+
+}
+
+
+#RpgHeroHealthBar {
+  
+ width: 100px;
+ position: absolute;
+width: 100px;
+height: 10px;
+left: 125px;
+top: 175px;
+}
+
+#heroSpot {
+
+position: absolute;
+width: 115px;
+height: 117px;
+left: 40px;
+top: 71px;
+}
+#moveDiv {
+background-image: url('./Assets/Images/moveWindow.png');
+position: absolute;
+width: 73px;
+height: 186px;
+left: 51px;
+top: 61px;
+
+border: 2px solid #FFFFFF;
+box-sizing: border-box;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#enemySpot {
+position: absolute;
+left: 540px;
+top: -40px;
+}
+
+#RpgEnemyHealthBar {
+ width: 200px;
+position: absolute;
+width: 197px;
+height: 11px;
+left: 533px;
+top: 175px;
+}
+
+
+#heroMoveDiv {
+  text-align: center;
+ margin-left:4px;
+ margin-top: 15px;
+ font-size: 10px;
+ line-height: 28px;
+}
+
+#centralTextArea {
+  position: absolute;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  margin-left:250px;
+  margin-top: 25px;
+  text-align: center;
+  color: white;
+
+
+}
+
+#scoreDiv{
+  position: absolute;
+    font-family: 'Press Start 2P';
+  font-size: 10px;
+   margin-left:390px;
+  margin-top: 250px;
+  color: white;
+
+}
