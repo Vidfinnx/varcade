@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Div } from "./Signup.styles";
 import { useMutation } from "@apollo/client";
-import { ADD_PROFILE } from "../utils/mutations";
+import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const Signup = () => {
@@ -13,7 +13,7 @@ const Signup = () => {
     password: "",
   });
 
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE); // ADD_PROFILE and addProfile get used here
+  const [addUser, { error, data }] = useMutation(ADD_USER); // ADD_PROFILE and addProfile get used here
 
   // // update state based on form input changes
   const handleChange = (event) => {
@@ -32,12 +32,12 @@ const Signup = () => {
     console.log(event);
     try {
       // runs the method of addProfile and on all the info in formState and puts it into data
-      const { data } = await addProfile({
+      const { data } = await addUser({
         variables: { ...formState },
       });
       console.log(data);
       console.log("USER SIGNNED IN");
-      Auth.login(data.addProfile.token);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }

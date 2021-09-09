@@ -8,7 +8,7 @@ export const DIV = styled.div`
   }
 
   .background {
-    background-image: url("./images/arcadeHome.png");
+    background-image: url("./images/arcade2.png");
     /* Full height */
     height: 100%;
     width: 100%;

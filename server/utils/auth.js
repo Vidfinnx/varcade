@@ -27,7 +27,7 @@ module.exports = {
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       // console.log(data); // logs the username and id of the current user using the app
-      req.profile = data; // we set equal the req.profile to the data
+      req.user = data; // we set equal the req.profile to the data
       // console.log(req.profile); // also logs the username and id of the current user using the app
     } catch {
       console.log("Invalid token");
@@ -41,38 +41,3 @@ module.exports = {
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 };
-
-// const jwt = require("jsonwebtoken");
-
-// const secret = "mysecretsshhhhh";
-// const expiration = "2h";
-
-// module.exports = {
-//   authMiddleware: function ({ req }) {
-//     let token = req.body.token || req.query.token || req.headers.authorization;
-
-//     if (req.headers.authorization) {
-//       token = token.split(" ").pop().trim();
-//     }
-
-//     console.log("token", token);
-
-//     if (!token) {
-//       return req;
-//     }
-
-//     try {
-//       const { data } = jwt.verify(token, secret, { maxAge: expiration });
-//       req.user = data;
-//     } catch {
-//       console.log("Invalid token");
-//     }
-
-//     return req;
-//   },
-//   signToken: function ({ firstName, email, _id }) {
-//     const payload = { firstName, email, _id };
-
-//     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-//   },
-// };
