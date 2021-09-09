@@ -9,7 +9,8 @@ import enemyMoves from './Enemy/Moves/EnemyMoves'
 // import HeroMoves from './Hero/Moves/HeroMoves'
 // import GameStart from './GameStart'
 import CenterText from './Assets/CenterText'
-
+import { SpriteAnimator } from 'react-sprite-animator'
+import heroAtkSprite from './Assets/Images/cloud_atk_sprite.png'
 
 
 const RpgBattle = () => {
@@ -25,10 +26,10 @@ const RpgBattle = () => {
     })
 
     const [heroText, setHeroText] = useState({
-        text: undefined
+        text: "Defeat Sephiroth using as many "
     })
     const [enemyText, setEnemyText] = useState({
-        text: undefined
+        text: "moves as possible. More moves = more score."
     })
     const [heroState, setHeroState] = useState({
         name: 'Cloud',
@@ -128,7 +129,21 @@ const RpgBattle = () => {
 
             {/* Hero */ }
             <div id="heroSpot">
-                <Hero />
+
+                <SpriteAnimator
+                    sprite={ heroAtkSprite }
+                    startFrame={ 3 }
+                    fps={ 5 }
+                    width={ 382 }
+                    height={ 142 }
+                    frameCount={ 4 }
+                    wrapAfter={ 4 }
+                    stopLastFrame={ true }
+                    scale={ 1 }
+                    direction={ "vertical" }
+                    shouldAnimate={ false }
+
+                />
             </div>
             <div id="RpgHeroHealthBar">
                 { heroHp.map((item, idx) => (
@@ -137,7 +152,7 @@ const RpgBattle = () => {
             </div>
             <div id="moveDiv" >
                 <div id="heroMoveDiv" onClick={ handleHeroAttack }>
-                    <Move onClick={ console.log('hi') } />
+                    <Move />
 
                 </div>
 
