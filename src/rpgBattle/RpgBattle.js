@@ -11,7 +11,9 @@ import enemyMoves from './Enemy/Moves/EnemyMoves'
 import CenterText from './Assets/CenterText'
 import { SpriteAnimator } from 'react-sprite-animator'
 import heroAtkSprite from './Assets/Images/cloud_atk_sprite.png'
-
+import useSetScore from './SetScore'
+import { useSprite } from 'react-sprite-animator'
+import Spritesheet from 'react-responsive-spritesheet';
 
 const RpgBattle = () => {
 
@@ -19,7 +21,7 @@ const RpgBattle = () => {
     // I am thinking of creating a 'sendScore()' function to get the
     // user name and send 'scoreText.score' to the DB. 
     // The 'sendScore()' will be invoked when the round ends on win/loss 
-
+    // const [addScore, setAddScore] = useSetScore()
 
     const [scoreText, setScoreText] = useState({
         score: 0
@@ -129,21 +131,23 @@ const RpgBattle = () => {
 
             {/* Hero */ }
             <div id="heroSpot">
-
-                <SpriteAnimator
-                    sprite={ heroAtkSprite }
-                    startFrame={ 3 }
-                    fps={ 5 }
-                    width={ 382 }
-                    height={ 142 }
-                    frameCount={ 4 }
-                    wrapAfter={ 4 }
-                    stopLastFrame={ true }
-                    scale={ 1 }
-                    direction={ "vertical" }
-                    shouldAnimate={ false }
-
-                />
+                {/* // just hide and show div... */ }
+                {/* <Spritesheet
+                    image={ heroAtkSprite }
+                    startAt={ 1 }
+                    endAt={ 15 }
+                    fps={ 4 }
+                    widthFrame={ 382 }
+                    heightFrame={ 142 }
+                    steps={ 15 }
+                    loop={ false }
+                    timeout={ 0 }
+                    direction={ `forward` }
+                    autoplay={ false }
+                    onClick={ spritesheet => {
+                        spritesheet.play();
+                    } }
+                /> */}
             </div>
             <div id="RpgHeroHealthBar">
                 { heroHp.map((item, idx) => (
