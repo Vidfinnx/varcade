@@ -1,4 +1,3 @@
-import Hero from './Hero/Hero'
 import Enemy from './Enemy/Enemy'
 import './RpgBattle.css'
 import React, { useState, useEffect } from 'react';
@@ -6,14 +5,14 @@ import RpgHeroHealthBar from './Hero/RpgHeroHealthBar'
 import RpgEnemyHealthBar from './Enemy/RpgEnemyHealthBar'
 import Move from './Hero/Moves/Move'
 import enemyMoves from './Enemy/Moves/EnemyMoves'
+import CenterText from './Assets/CenterText'
 // import HeroMoves from './Hero/Moves/HeroMoves'
 // import GameStart from './GameStart'
-import CenterText from './Assets/CenterText'
-import { SpriteAnimator } from 'react-sprite-animator'
-import heroAtkSprite from './Assets/Images/cloud_atk_sprite.png'
-import useSetScore from './SetScore'
-import { useSprite } from 'react-sprite-animator'
-import Spritesheet from 'react-responsive-spritesheet';
+// import heroAtkSprite from './Assets/Images/cloud_atk_sprite.png'
+// import useSetScore from './SetScore'
+// import Spritesheet from 'react-responsive-spritesheet';
+// import Hero from './Hero/Hero'
+
 
 const RpgBattle = () => {
 
@@ -176,7 +175,7 @@ const RpgBattle = () => {
 
             {/* ENEMY */ }
             <div id="enemySpot">
-                <Enemy />
+                {/* <Enemy /> */ }
 
             </div>
             <div id="RpgEnemyHealthBar">
