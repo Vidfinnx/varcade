@@ -7,7 +7,6 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-
 import Cabinet from "./components/Cabinet";
 // import Touchcontrols from "./components/Touchcontrols";
 // import Background from "./components/background";
@@ -18,6 +17,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+// import HomeBackground from "./components/HomeBackground";
+import Name from "./components/Name";
 
 const httpLink = createHttpLink({
   uri: "/graphql", //The URI of the GraphQL endpoint that Apollo Client will communicate with.
@@ -45,25 +46,28 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        
-
         <Switch>
           <Route exact path="/">
             <Navbar />
+            <Name />
             <Home />
+            {/* <HomeBackground /> */}
           </Route>
+
           <Route exact path="/signup">
-          <Navbar />
+            <Navbar />
+            <Name />
             <Signup />
-            <Home />
+            {/* <Home /> */}
           </Route>
 
           <Route exact path="/login">
-          <Navbar />
+            <Navbar />
+            <Name />
             <Login />
-            <Home />
+            {/* <Home /> */}
           </Route>
-          
+
           <Route exact path="/game1">
             <Cabinet />
             {/* <Touchcontrols/> */}
