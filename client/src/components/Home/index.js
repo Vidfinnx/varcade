@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <Div>
       <img src={"./images/arcadewallpaper.png"} alt="arcadeWallpaper" />
-      <div class="container">
-        <div class="one">
+      <div className="container">
+        <div className="one">
           <Link to={"/game1"}>
             <img src={"./images/game1.jpg"} alt="game1" />
             {/* <p>Game 1</p> */}

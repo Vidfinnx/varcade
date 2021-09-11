@@ -51,16 +51,16 @@ const resolvers = {
     //   return score;
     // },
     login: async (parent, { username, password }) => {
-      const user = await User.findOne({ username, password });
+      const user = await User.findOne({ username });
 
       if (!user) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("NO USER FOUND BY THAT NAME");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("WRONG PASSWORD");
       }
 
       const token = signToken(user);
