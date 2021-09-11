@@ -46,7 +46,7 @@ const resolvers = {
       return { token, user };
     },
 
-    
+
     createScore: async (parent, args) => {
       const score = await Score.create(args);
       return score;

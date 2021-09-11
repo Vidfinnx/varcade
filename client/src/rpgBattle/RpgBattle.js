@@ -109,7 +109,7 @@ const RpgBattle = () => {
 
     console.log("Sephiroth: " + enemyState.hp + " HP")
     console.log("Cloud: " + heroState.hp + " HP")
-    console.log(RpgEnemyHealthBar.props)
+
 
     let enemyHpPercent = Math.floor((enemyState.hp / 200) * 100)
     let heroHpPercent = Math.floor((heroState.hp / 200) * 100)
