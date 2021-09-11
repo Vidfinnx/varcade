@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
+import { Div } from "./Login.styles";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { LOGIN_USER } from "../utils/mutations";
@@ -38,40 +40,44 @@ const Login = (props) => {
     });
   };
   return (
-    <div>
+    <Div>
       {data ? (
         <p>
           Success! You may now head <Link to="/">back to the homepage.</Link>
         </p>
       ) : (
-        <form onSubmit={handleFormSubmit}>
-          <input
-            className="nes-input is-dark"
-            placeholder="Your username"
-            name="username"
-            type="username"
-            value={formState.name}
-            onChange={handleChange}
-          />
-          <input
-            className="nes-input is-dark"
-            placeholder="Your Password"
-            name="password"
-            type="password"
-            value={formState.password}
-            onChange={handleChange}
-          />
-          <button
-            className="nes-btn"
-            style={{ cursor: "pointer" }}
-            type="submit"
-          >
-            Submit
-          </button>
-        </form>
+        <div className="background">
+          <img src={"./images/cabinet3.png"} alt="wallpaper" />
+          <form onSubmit={handleFormSubmit}>
+            <span className="title">Login</span>
+            <input
+              className="nes-input is-dark"
+              placeholder="Your username"
+              name="username"
+              type="text"
+              value={formState.name}
+              onChange={handleChange}
+            />
+            <input
+              className="nes-input is-dark"
+              placeholder="Your Password"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <button
+              className="nes-btn"
+              style={{ cursor: "pointer" }}
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       )}
       {error && <div>{error.message}</div>}
-    </div>
+    </Div>
   );
 };
 

@@ -16,9 +16,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-// import HomeBackground from "./components/HomeBackground";
 import Name from "./components/Name";
+// import Home from "./components/Home";
+import GamesComp from "./components/GamesComponent/GamesComp";
+// import HomeBackground from "./components/HomeBackground";
 
 const httpLink = createHttpLink({
   uri: "/graphql", //The URI of the GraphQL endpoint that Apollo Client will communicate with.
@@ -50,7 +51,8 @@ function App() {
           <Route exact path="/">
             <Navbar />
             <Name />
-            <Home />
+            {/* <Home /> */}
+            <GamesComp />
             {/* <HomeBackground /> */}
           </Route>
 
