@@ -49,27 +49,31 @@ const Signup = () => {
           Success! You may now head <Link to="/">back to the homepage.</Link>
         </p>
       ) : (
-        <form onSubmit={handleFormSubmit}>
-          <input
-            className="nes-input is-dark"
-            placeholder="Your username"
-            name="username"
-            type="text"
-            value={formState.name}
-            onChange={handleChange}
-          ></input>
-          <input
-            className="nes-input is-dark"
-            placeholder="Your Password"
-            name="password"
-            type="password"
-            value={formState.password}
-            onChange={handleChange}
-          ></input>
-          <button type="submit" className="nes-btn">
-            Submit
-          </button>
-        </form>
+        <div className="background">
+          <img src={"./images/cabinet3.png"} alt="wallpaper" />
+          <form onSubmit={handleFormSubmit}>
+            <span className="title">SignUp</span>
+            <input
+              className="nes-input is-dark"
+              placeholder="Your username"
+              name="username"
+              type="text"
+              value={formState.name}
+              onChange={handleChange}
+            ></input>
+            <input
+              className="nes-input is-dark"
+              placeholder="Your Password"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            ></input>
+            <button type="submit" className="nes-btn">
+              Submit
+            </button>
+          </form>
+        </div>
       )}
 
       {error && <div>{error.message}</div>}

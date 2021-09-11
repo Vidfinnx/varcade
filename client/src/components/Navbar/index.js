@@ -54,7 +54,7 @@ const Navbar = () => {
             </li>
             <li>
               <button className="nes-badge" onClick={logout}>
-                <span id="span" className="is-dark">
+                <span id="span" className="is-dark tes">
                   Logout
                 </span>
               </button>
