@@ -52,13 +52,12 @@ left: 125px;
 top: 175px;
 }
 
-#heroSpot {
+.heroSpot {
 
 position: absolute;
-width: 115px;
-height: 117px;
-left: 40px;
-top: 71px;
+pointer-events: none;
+left: -80px;
+top: 20px;
 }
 #moveDiv {
 background-image: url('./Assets/Images/moveWindow.png');
@@ -73,7 +72,7 @@ box-sizing: border-box;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#enemySpot {
+.enemySpot {
 position: absolute;
 left: 540px;
 top: -40px;
