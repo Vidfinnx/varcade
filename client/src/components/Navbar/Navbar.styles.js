@@ -32,6 +32,11 @@ export const Nav = styled.nav`
     color: #4f43ae;
   }
 
+  .tes {
+    left: 0px;
+    /* position: none; */
+  }
+
   #span:hover {
     background-color: #4f43ae;
     color: #cec9cc;
