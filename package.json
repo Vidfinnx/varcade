@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Vidfinnx/varcade#readme",
   "dependencies": {
-    "mongoose": "^6.0.5"
+    "mongoose": "^6.0.5",
+    "react-responsive-spritesheet": "^2.3.9"
   }
 }
