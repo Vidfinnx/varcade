@@ -13,14 +13,10 @@ import Toplogo from '../images/catop.png'
 
 export default function  Cabinet() {
     return (
-        <div className="arcadebottom">
-            <div className="top">
-            <Image id="toplogo" src={Toplogo} fluid></Image>
-            </div>
+        <div className="cabinet">
+            <Image id="toplogo" src={Toplogo} alt="broken"/>
             <Pacman/> 
-            <div className="bottom">
-            <Image id="joysticks" src={Arcbottom} fluid></Image>
-              </div>
-        </div>
+            <Image id="joysticks" src={Arcbottom} alt="broken"/>
+            </div>
     )
 }
