@@ -5,21 +5,19 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     email: String
-    scores: [Score]
-  }
-
-  type Score {
-    _id: ID!
-    score: Int!
+    scorePacman: [User]
+    scoreRpg: [Score]
   }
 
   type Query {
     user: [User]
-    score(user: String!): [Score]
+    scorePacman(user: String!): [User]
+    scoreRpg(user: String!): [User]
   }
 
   type Mutation {
-    createScore(user1: String!, user2: String!): Score
+    createScore(user: String!): User
+    updateScore(user: String!): User
     login(email: String!, password: String!): Auth
   }
 `;

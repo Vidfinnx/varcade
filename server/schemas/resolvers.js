@@ -27,17 +27,21 @@ const resolvers = {
       const score = await Score.create(args);
       return score;
     },
+    updateScore: async (parent, args) => {
+      const score = await Score.update(args);
+      return score;
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('User does not exist');
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('Incorrect Password');
       }
 
       const token = signToken(user);

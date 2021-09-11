@@ -9,7 +9,11 @@ const scoreSchema = new Schema({
     type: String,
     required: true,
   },
-  score: {
+  scorePacman: {
+    type: Number,
+    default: 0,
+  },
+  scoreRpg: {
     type: Number,
     default: 0,
   },
