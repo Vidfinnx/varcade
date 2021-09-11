@@ -1,4 +1,3 @@
-import Hero from './Hero/Hero'
 import Enemy from './Enemy/Enemy'
 import './RpgBattle.css'
 import React, { useState, useEffect } from 'react';
@@ -6,10 +5,13 @@ import RpgHeroHealthBar from './Hero/RpgHeroHealthBar'
 import RpgEnemyHealthBar from './Enemy/RpgEnemyHealthBar'
 import Move from './Hero/Moves/Move'
 import enemyMoves from './Enemy/Moves/EnemyMoves'
+import CenterText from './Assets/CenterText'
 // import HeroMoves from './Hero/Moves/HeroMoves'
 // import GameStart from './GameStart'
-import CenterText from './Assets/CenterText'
-
+// import heroAtkSprite from './Assets/Images/cloud_atk_sprite.png'
+// import useSetScore from './SetScore'
+// import Spritesheet from 'react-responsive-spritesheet';
+// import Hero from './Hero/Hero'
 
 
 const RpgBattle = () => {
@@ -18,17 +20,17 @@ const RpgBattle = () => {
     // I am thinking of creating a 'sendScore()' function to get the
     // user name and send 'scoreText.score' to the DB. 
     // The 'sendScore()' will be invoked when the round ends on win/loss 
-    // I can also
+    // const [addScore, setAddScore] = useSetScore()
 
     const [scoreText, setScoreText] = useState({
         score: 0
     })
 
     const [heroText, setHeroText] = useState({
-        text: undefined
+        text: "Defeat Sephiroth using as many "
     })
     const [enemyText, setEnemyText] = useState({
-        text: undefined
+        text: "moves as possible. More moves = more score."
     })
     const [heroState, setHeroState] = useState({
         name: 'Cloud',
@@ -65,7 +67,7 @@ const RpgBattle = () => {
             setHeroText({ text: null })
             setEnemyText({ text: null })
         }
-    }, [heroState.hp, enemyState.hp])
+    }, [heroState.hp, enemyState.hp, scoreText.score])
 
 
     const handleHeroAttack = (e) => {
@@ -100,8 +102,6 @@ const RpgBattle = () => {
 
         setHeroState({ hp: total })
 
-        console.log("Sephiroth used " + chosenEnemyMove.name + " for " + chosenEnemyMove.dmg + " damage!")
-
         setEnemyText({
             text: "Sephiroth used " + chosenEnemyMove.name + " for " + chosenEnemyMove.dmg + " damage!"
         })
@@ -130,7 +130,23 @@ const RpgBattle = () => {
 
             {/* Hero */ }
             <div id="heroSpot">
-                <Hero />
+                {/* // just hide and show div... */ }
+                {/* <Spritesheet
+                    image={ heroAtkSprite }
+                    startAt={ 1 }
+                    endAt={ 15 }
+                    fps={ 4 }
+                    widthFrame={ 382 }
+                    heightFrame={ 142 }
+                    steps={ 15 }
+                    loop={ false }
+                    timeout={ 0 }
+                    direction={ `forward` }
+                    autoplay={ false }
+                    onClick={ spritesheet => {
+                        spritesheet.play();
+                    } }
+                /> */}
             </div>
             <div id="RpgHeroHealthBar">
                 { heroHp.map((item, idx) => (
@@ -139,7 +155,7 @@ const RpgBattle = () => {
             </div>
             <div id="moveDiv" >
                 <div id="heroMoveDiv" onClick={ handleHeroAttack }>
-                    <Move onClick={ console.log('hi') } />
+                    <Move />
 
                 </div>
 
@@ -159,7 +175,7 @@ const RpgBattle = () => {
 
             {/* ENEMY */ }
             <div id="enemySpot">
-                <Enemy />
+                {/* <Enemy /> */ }
 
             </div>
             <div id="RpgEnemyHealthBar">
