@@ -10,11 +10,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  scorePacman: {
-    type: Number,
-    default: 0,
-  },
-  scoreRpg: {
+  score: {
     type: Number,
     default: 0,
   },

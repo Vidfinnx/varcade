@@ -46,27 +46,21 @@ const resolvers = {
       return { token, user };
     },
 
-
-    createScore: async (parent, args) => {
-      const score = await Score.create(args);
-      return score;
-    },
-    updateScore: async (parent, args) => {
-      const score = await Score.update(args);
-      return score;
-    },
+    // createScore: async (parent, args) => {
+    //   const score = await Score.create(args);
+    //   return score;
+    // },
     login: async (parent, { username, password }) => {
       const user = await User.findOne({ username });
 
       if (!user) {
         throw new AuthenticationError("NO USER FOUND BY THAT NAME");
-
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect Password');
+        throw new AuthenticationError("WRONG PASSWORD");
       }
 
       const token = signToken(user);
