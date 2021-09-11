@@ -5,7 +5,7 @@ import Spritesheet from 'react-responsive-spritesheet';
 import cloudAtkSprite from '../../Assets/Images/cloud_atk_sprite.png'
 import sephAtkSprite from '../../Assets/Images/seph_atk_sprite.png'
 
-// need to import spritesheet from another component and pass play instructions as props
+// need to import spritesheet from another component and pass play instructions as props for enemy attack
 class Moves extends Component {
     constructor() {
         super();
