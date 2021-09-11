@@ -71,7 +71,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link className="nes-badge" to={"/signup"}>
-                <span id="span" class="is-dark">
+                <span id="span" className="is-dark">
                   Signup
                 </span>
               </Link>
