@@ -5,11 +5,7 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     password: String
-    scores: [Score]
-  }
-  type Score {
-    _id: ID!
-    score: Int!
+    score: [User]
   }
 
   type Auth {
@@ -23,12 +19,13 @@ const typeDefs = gql`
     #   # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     #   me: User
     #   # user: [User]
-    #   # score(user: String!): [Score]
+    score(user: String!): [User]
   }
   type Mutation {
     addUser(username: String!, password: String!): Auth
-    # createScore(user1: String!, user2: String!): Score
+    updateScore(username: String!, score: Int!): Auth
     login(username: String!, password: String!): Auth
+    
   }
 `;
 
