@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     password: String
-    score: [User]
+    score: Int!
   }
 
   type Auth {
