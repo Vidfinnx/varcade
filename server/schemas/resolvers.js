@@ -46,10 +46,13 @@ const resolvers = {
       return { token, user };
     },
 
-    // createScore: async (parent, args) => {
-    //   const score = await Score.create(args);
-    //   return score;
-    // },
+    updateScore: async (parent, {username,score}) => {
+      // console.log(args);
+      const scored = await User.findOneAndUpdate({username},{ $set: { score: score } },{new: true });
+      console.log(scored);
+      return { scored };
+      
+    },
     login: async (parent, { username, password }) => {
       const user = await User.findOne({ username });
 

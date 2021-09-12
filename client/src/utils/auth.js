@@ -34,6 +34,7 @@ class AuthService {
       return true;
     }
     return false;
+    
   }
 
   // gets th token i local storage
