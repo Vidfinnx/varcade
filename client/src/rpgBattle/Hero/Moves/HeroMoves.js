@@ -11,7 +11,7 @@ const HeroMoves = [
     },
     {
         id: 3,
-        name: "Omni-Slash",
+        name: "B.Burst",
         dmg: 50
     },
     {

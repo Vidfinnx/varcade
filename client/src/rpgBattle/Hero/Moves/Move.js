@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Spritesheet from 'react-responsive-spritesheet';
 import cloudAtkSprite from '../../Assets/Images/cloud_atk_sprite.png'
 import sephAtkSprite from '../../Assets/Images/seph_atk_sprite.png'
+import RpgHeroHealthBar from '../RpgHeroHealthBar'
 
 // need to import spritesheet from another component and pass play instructions as props for enemy attack
 class Moves extends Component {
@@ -13,9 +14,14 @@ class Moves extends Component {
             name: 'React'
         };
     }
-
+    // myFunctionPlay2() {
+    //     this.spritesheeInstance2.goToAndPlay(1)
+    // }
     myFunctionPlay() {
-        this.spritesheeInstance.goToAndPlay(1);
+        this.spritesheeInstance.goToAndPlay(1)
+        setTimeout(() => {
+            this.spritesheeInstance2.goToAndPlay(1)
+        }, 2000)
     }
 
     // myFunctionPause() {
@@ -36,40 +42,43 @@ class Moves extends Component {
 
     render() {
         return (
-            <div className="spriteContainer">
+            <div className="spriteContainer" >
 
-                <div >
-                    {
-                        HeroMoves.map(item => (
-                            <div>
-                                <a href="#" onClick={ this.myFunctionPlay.bind(this) } key={ item.id } moveName={ item.name } damage={ item.dmg }  >
-                                    { item.name }
 
-                                    {/* Dmg:  { item.dmg } */ }
-                                </a>
+                <div id="movesWindow" className="nes-container with-title is-dark">
+                    <p className="title">Cloud</p>
 
-                            </div>
+                    <div id="heroMoves">
+                        {
+                            HeroMoves.map(item => (
+                                <div>
+                                    <button type="button" className="nes-btn is-primary" onClick={ this.myFunctionPlay.bind(this) } key={ item.id } moveName={ item.name } damage={ item.dmg }  >
+                                        { item.name }
+                                        <br></br><br></br>
+                                        Dmg:{ item.dmg }
+                                    </button>
+                                </div>
+                            ))
+                        }
 
-                        ))
-                    }
+
+
+                    </div>
+
                 </div>
 
-                {/* <div>
-                    <button onClick={ this.myFunctionPlay.bind(this) }>Cut</button>
-
-                </div> */}
 
                 <Spritesheet
                     className={ `heroSpot` }
                     image={ cloudAtkSprite }
-                    widthFrame={ 382 }
+                    widthFrame={ 194 }
                     scale={ 1 }
-                    heightFrame={ 140 }
-                    startAt={ 15 }
-                    endAt={ 15 }
-                    steps={ 15 }
+                    heightFrame={ 125 }
+                    startAt={ 12 }
+                    // endAt={ 12 }
+                    steps={ 12 }
                     fps={ 8 }
-                    timeout={ 1800 }
+                    timeout={ 2000 }
                     direction={ `forward` }
                     autoplay={ false }
                     loop={ false }
@@ -79,12 +88,13 @@ class Moves extends Component {
                     onLoopComplete={ this.myFunctionToggleDirection.bind(this)
                     }
                 />
-                {/* <Spritesheet
+
+                <Spritesheet
                     className={ `enemySpot` }
                     image={ sephAtkSprite }
-                    widthFrame={ 382 }
+                    widthFrame={ 280 }
                     scale={ 1 }
-                    heightFrame={ 140 }
+                    heightFrame={ 185 }
                     startAt={ 27 }
                     endAt={ 27 }
                     steps={ 27 }
@@ -93,12 +103,12 @@ class Moves extends Component {
                     direction={ `forward` }
                     autoplay={ false }
                     loop={ false }
-                    getInstance={ spritesheet => {
-                        this.spritesheeInstance = spritesheet;
+                    getInstance={ spritesheet2 => {
+                        this.spritesheeInstance2 = spritesheet2;
                     } }
                     onLoopComplete={ this.myFunctionToggleDirection.bind(this)
                     }
-                /> */}
+                />
 
             </div>
         );

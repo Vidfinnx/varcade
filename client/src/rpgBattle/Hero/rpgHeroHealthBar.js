@@ -3,10 +3,10 @@ import React from "react";
 const RpgHeroHealthBar = (props) => {
     const { bgcolor, completed, heroHps } = props;
     const containerStyles = {
-        height: 20,
+        height: 10,
         width: '100%',
         backgroundColor: "#000000",
-        borderRadius: 50,
+        borderRadius: 2,
         margin: 50
     }
 
@@ -21,7 +21,7 @@ const RpgHeroHealthBar = (props) => {
     const labelStyles = {
         padding: 5,
         color: 'white',
-        fontWeight: 'bold'
+
     }
 
 
@@ -31,7 +31,7 @@ const RpgHeroHealthBar = (props) => {
         <div id="enemyHealthBar">
             <div style={ containerStyles }>
                 <div style={ fillerStyles }>
-                    <span style={ labelStyles }>{ `${heroHps}` }</span>
+                    <span style={ labelStyles }></span>
                 </div>
             </div>
         </div>
