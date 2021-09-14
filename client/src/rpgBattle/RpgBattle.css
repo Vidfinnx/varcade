@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@media screen and (max-width: 640px){
+  body{
+    
+    position:static;
+    transform: rotate(90deg);
+  
+    height:96%;
+    width: 96%;
+  }
+}
+
+body{
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Press Start 2P';
+}
+#rpgWrapper {
+display: absolute;
+background-repeat: no-repeat;
+background-size:cover;
+background-image:url("./Assets/Images/rpgBackground.png");
+width: 828px;
+height:293px;
+}
+ */
+
+#enemyHealthBar {
+  width: 200px;
+}
+
+#RpgHeroHealthBar {
+position: absolute;
+width: 140px;
+height: 5px;
+left: 155px;
+top: 135px;
+font-size: 12px;
+}
+
+.heroSpot {
+position: absolute;
+pointer-events: none;
+left: 150px;
+top: 45px;
+}
+
+.enemySpot {
+position: absolute;
+left: 440px;
+top: 0px;
+}
+
+#RpgEnemyHealthBar {
+position: absolute;
+width: 220px;
+height: 11px;
+bottom:88px;
+right: 94px;
+}
+
+#sephName{
+  margin-top:20px;
+}
+
+#enemyContainer{
+  position: absolute;
+  margin-left:465px;
+  margin-top:145px;
+  width: 318px;
+  height: 95px;
+  background:none;
+}
+
+#centralTextArea {
+  position: absolute;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  margin-left:250px;
+  margin-top: 25px;
+  text-align: center;
+  color: white;
+}
+
+#rpgTitle{
+  margin-left:70px;
+}
+
+#scoreDiv{
+  position: absolute;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  margin-left:388px;
+  margin-top: 170px;
+  color: white;
+}
+
+#scoreTextDiv{
+  position: absolute;
+  font-size: 10px;
+  margin-left:410px;
+  margin-top: 200px;
+  color: white;
+  font-size:15px;
+}
+#movesWindow{
+  display: inline-flex;
+  float:left;
+  margin-top:-20px;
+  margin-left: 50px;
+  width: 318px;
+  height: 95px;
+  top:165px;
+  background: none;
+  font-size: 12px;
+}
+
+#musicTxt{
+  position:absolute;
+  color:white;
+  font-size: 13px;
+  margin-left: 385px;
+  margin-top: -10px;
+}
+
+#heroMoves{
+  display: inline-flex;
+  margin-left: -120px;
+  margin-top: 10px;
+  text-align: left;
+
+}
+
+.nes-btn{
+  width:65px;
+  height: 25px;
+  font-size: 7.1px;
+}
+
+.title{
+  height:24px;
+  font-size: 8px;
+}
+
+#musicContainer{
+  display: inline-flex;
+  margin-left:-350px;
+}
+
+#musicRadio{
+  position: absolute;
+  background:none;
+  font-size: 13px;
+  top:10px;
+  left:700px;
+  text-align: center;
+}
+
+#musicImg{
+  position: absolute;
+  width:30px;
+  height:30px;
+  margin-left:300px;
+  margin-top: -10px;
+}
+
+#spriteContainer{
+  top:20px;
+}
+
+#openBtn{
+  margin-left: -500px;
+}
+
+#dialog-default{
+  position: absolute;
+  z-index:9999;
+  width:575px;
+  height:200px;
+  font-size: 13px;
+  margin-left:135px;
+  top:40px;
+}
+
+#okButton{
+
+ margin-top:30px;
+ width:150px;
+ height:40px ;
+ font-size:13px;
+}
+
+#exitBtn{
+  position: absolute;
+  text-decoration: none;
+  text-transform: none;
+  color:white;
+  font-size: 13px;
+  left:20px;
+  top:10px;
+}

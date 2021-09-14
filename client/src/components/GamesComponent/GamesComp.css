@@ -1,0 +1,83 @@
+.img {
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  z-index: 1;
+  /* text-align: left; */
+}
+
+.container {
+  height: 500px;
+  display: grid;
+  grid-template-columns: auto 25% 25% 25%;
+  /* grid-gap: 10px; */
+  grid-template-rows: 85%;
+  grid-template-areas: "sec1 sec2 sec3 sec4";
+  position: relative;
+  top: 150px;
+  /* bottom: 50px; */
+}
+
+.one {
+  /* background-color: red; */
+  grid-area: sec1;
+  margin: 20px 50px 50px 50px;
+  z-index: 2;
+}
+
+.one img {
+  width: 100%;
+  height: 50%;
+  z-index: 3;
+  position: relative;
+}
+
+/* 
+  .one p {
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    font-size: 20px;
+    color: black;
+
+    z-index: 4;
+    display: block;
+    font-size: 1.2rem;
+    position: absolute;
+    height: 0;
+    top: 0;
+    opacity: 0;
+    padding: 18px 8%;
+    background-color: white;
+    overflow-y: scroll;
+    transition: 0.8s ease; 
+  }
+    */
+
+.two {
+  /* background-color: blue; */
+  grid-area: sec2;
+  margin: 20px 50px 50px 50px;
+  z-index: 2;
+}
+
+.two img {
+  width: 100%;
+  height: 50%;
+  z-index: 3;
+  position: relative;
+}
+
+.three {
+  background-color: green;
+  grid-area: sec3;
+  margin: 20px 30px 20px 20px;
+  z-index: 2;
+}
+
+.four {
+  background-color: yellow;
+  grid-area: sec4;
+  margin: 20px;
+  z-index: 2;
+}
