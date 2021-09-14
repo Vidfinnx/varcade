@@ -84,6 +84,7 @@ const resolvers = {
 
       return { token, user };
     },
+
   },
 };
 

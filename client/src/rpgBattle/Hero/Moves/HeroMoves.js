@@ -11,13 +11,13 @@ const HeroMoves = [
     },
     {
         id: 3,
-        name: "Omni-Slash",
+        name: "Braver",
         dmg: 50
     },
     {
         id: 4,
-        name: "Braver",
-        dmg: 70
+        name: "IWIN",
+        dmg: 400
     },
 ]
 
