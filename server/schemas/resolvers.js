@@ -5,14 +5,17 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      console.log("users");
-      return User.find();
+      console.log("get all users resolver");
+      const allusers = await User.find({},{password: 0})
+      // console.log(allusers);
+      return allusers;
     },
-    //   user: async (parent, { userId }) => {
-    //     console.log("user");
-    //     console.log(userId);
-    //     return User.findOne({ _id: userId });
-    //   },
+      user: async (parent, { username }) => {
+        console.log("one user resolver")
+        const oneuser = await User.findOne({ username },'username score');
+        console.log(oneuser);
+        return oneuser;
+      },
     //   me: async (parent, args, context) => {
     //     // console.log("//////////////////////////////////");
     //     // console.log(context); // logs the req which comes from the auth.js file, the authMiddleware function
@@ -47,10 +50,21 @@ const resolvers = {
     },
 
     updateScore: async (parent, {username,score}) => {
-      // console.log(args);
-      const scored = await User.findOneAndUpdate({username},{ $set: { score: score } },{new: true });
-      console.log(scored);
-      return { scored };
+      console.log("updating score resolver")
+      const user = await User.findOneAndUpdate({username},{ $inc: { score: score } },{new: true });
+      username = user.username;
+      score = user.score;
+      console.log(user);
+      return {user} ;
+      
+    },
+    resetScore: async (parent, {username}) => {
+      console.log("updating score resolver")
+      const user = await User.findOneAndUpdate({username},{ $set: { score: 0 } },{new: true });
+      username = user.username;
+      score = user.score;
+      console.log(user);
+      return {user} ;
       
     },
     login: async (parent, { username, password }) => {

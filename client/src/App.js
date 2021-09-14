@@ -19,7 +19,11 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 // import HomeBackground from "./components/HomeBackground";
 import Name from "./components/Name";
-import Scoreboard from "./components/Scoreboard";
+import Scoreboard from "./components/Scoreboard/Scoreboard";
+import { UserContext } from "./UserContext";
+import { useState } from "react";
+import CurrentUser from "./components/Currentuser/CurrentUser";
+import Resetscore from "./components/Resetscore/Resetscore";
 
 const httpLink = createHttpLink({
   uri: "/graphql", //The URI of the GraphQL endpoint that Apollo Client will communicate with.
@@ -44,17 +48,21 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 function App() {
+  const [loggedInUser, setLoggedIn] = useState("not logged in");
   return (
     <ApolloProvider client={client}>
       <Router>
         <Switch>
+      <UserContext.Provider  value={{loggedInUser, setLoggedIn}}>
           <Route exact path="/">
             <Navbar />
-            <Scoreboard/>
+            <CurrentUser/> 
             <Name />
             <Home />
+         
             {/* <HomeBackground /> */}
           </Route>
+       
 
           <Route exact path="/signup">
             <Navbar />
@@ -64,18 +72,20 @@ function App() {
           </Route>
 
           <Route exact path="/login">
+           <Scoreboard/>
             <Navbar />
             <Name />
             <Login />
             {/* <Home /> */}
           </Route>
 
+      
           <Route exact path="/game1">
             <Cabinet />
-            {/* <Touchcontrols/> */}
           </Route>
-
+         
           <Route exact path="*" redirect="/" />
+          </UserContext.Provider>
         </Switch>
       </Router>
     </ApolloProvider>
