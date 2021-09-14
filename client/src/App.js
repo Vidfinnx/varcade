@@ -19,10 +19,18 @@ import Navbar from "./components/Navbar";
 // import Home from "./components/Home";
 // import HomeBackground from "./components/HomeBackground";
 import Name from "./components/Name";
+<<<<<<< HEAD
+import Scoreboard from "./components/Scoreboard/Scoreboard";
+import { UserContext } from "./UserContext";
+import { useState } from "react";
+import CurrentUser from "./components/Currentuser/CurrentUser";
+import Resetscore from "./components/Resetscore/Resetscore";
+=======
 import Scoreboard from "./components/Scoreboard";
 import RpgBattle from "./rpgBattle/RpgBattle";
 import GamesComp from "./components/GamesComponent/GamesComp";
 import Auth from "../src/utils/auth";
+>>>>>>> 40ccdc5c0879f9c5f54a40af907c4b973e17a590
 
 const httpLink = createHttpLink({
   uri: "/graphql", //The URI of the GraphQL endpoint that Apollo Client will communicate with.
@@ -47,41 +55,58 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 function App() {
+  const [loggedInUser, setLoggedIn] = useState("not logged in");
   return (
-    <ApolloProvider client={ client }>
+    <ApolloProvider client={client}>
       <Router>
         <Switch>
+      <UserContext.Provider  value={{loggedInUser, setLoggedIn}}>
           <Route exact path="/">
             <Navbar />
+<<<<<<< HEAD
+            <CurrentUser/> 
+            <Name />
+            <Home />
+         
+            {/* <HomeBackground /> */}
+=======
             <Scoreboard />
             <Name />
             <GamesComp />
+>>>>>>> 40ccdc5c0879f9c5f54a40af907c4b973e17a590
           </Route>
+       
 
           <Route exact path="/signup">
             <Navbar />
             <Name />
             <Signup />
-            {/* <Home /> */ }
+            {/* <Home /> */}
           </Route>
 
           <Route exact path="/login">
+           <Scoreboard/>
             <Navbar />
             <Name />
             <Login />
-            {/* <Home /> */ }
+            {/* <Home /> */}
           </Route>
 
+      
           <Route exact path="/game1">
             <Cabinet />
-            {/* <Touchcontrols/> */ }
           </Route>
+<<<<<<< HEAD
+         
+=======
           <Route exact path="/rpgBattle">
             <RpgBattle />
-            {/* <Touchcontrols/> */ }
+            {/* <Touchcontrols/> */}
           </Route>
 
+>>>>>>> 40ccdc5c0879f9c5f54a40af907c4b973e17a590
           <Route exact path="*" redirect="/" />
+          </UserContext.Provider>
         </Switch>
       </Router>
     </ApolloProvider>
