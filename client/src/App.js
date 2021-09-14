@@ -19,7 +19,7 @@ import Navbar from "./components/Navbar";
 // import Home from "./components/Home";
 // import HomeBackground from "./components/HomeBackground";
 import Name from "./components/Name";
-import Scoreboard from "./components/Scoreboard/Scoreboard";
+import Scoreboard from './components/Scoreboard/Scoreboard'
 import { UserContext } from "./UserContext";
 import { useState } from "react";
 import CurrentUser from "./components/Currentuser/CurrentUser";
@@ -53,59 +53,47 @@ const client = new ApolloClient({
 function App() {
   const [loggedInUser, setLoggedIn] = useState("not logged in");
   return (
-    <ApolloProvider client={ client }>
+    <ApolloProvider client={client}>
       <Router>
         <Switch>
-          <UserContext.Provider value={ { loggedInUser, setLoggedIn } }>
-            <Route exact path="/">
-              <Navbar />
-<<<<<<< HEAD
-            <CurrentUser />
-            <Name />
-            <Home />
-
-            {/* <HomeBackground /> */ }
-=======
+      <UserContext.Provider  value={{loggedInUser, setLoggedIn}}>
+          <Route exact path="/">
+            <Navbar />
             <Scoreboard />
             <Name />
             <GamesComp />
->>>>>>> 40ccdc5c0879f9c5f54a40af907c4b973e17a590
           </Route>
-
+       
 
           <Route exact path="/signup">
             <Navbar />
             <Name />
             <Signup />
-            {/* <Home /> */ }
+            {/* <Home /> */}
           </Route>
 
           <Route exact path="/login">
-            <Scoreboard />
+           <Scoreboard/>
             <Navbar />
             <Name />
             <Login />
-            {/* <Home /> */ }
+            {/* <Home /> */}
           </Route>
 
-
+      
           <Route exact path="/game1">
             <Cabinet />
           </Route>
-<<<<<<< HEAD
-
-=======
           <Route exact path="/rpgBattle">
-          <RpgBattle />
-          {/* <Touchcontrols/> */ }
-        </Route>
+            <RpgBattle />
+            {/* <Touchcontrols/> */}
+          </Route>
 
->>>>>>> 40ccdc5c0879f9c5f54a40af907c4b973e17a590
-        <Route exact path="*" redirect="/" />
+          <Route exact path="*" redirect="/" />
           </UserContext.Provider>
         </Switch>
-      </Router >
-    </ApolloProvider >
+      </Router>
+    </ApolloProvider>
   );
 }
 
