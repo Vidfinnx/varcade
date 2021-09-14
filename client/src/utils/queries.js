@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 
 export const QUERY_SCORES = gql
-`
+  `
 {
     users{
       username
@@ -14,5 +14,7 @@ export const QUERY_SCORES = gql
 // export const QUERY_USER = gql`
 //   {
 //     user {
+//       username
+//       loggedin
 // }
 // `;
