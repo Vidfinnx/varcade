@@ -48,7 +48,7 @@ const client = new ApolloClient({
 });
 function App() {
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={ client }>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -62,23 +62,23 @@ function App() {
             <Navbar />
             <Name />
             <Signup />
-            {/* <Home /> */}
+            {/* <Home /> */ }
           </Route>
 
           <Route exact path="/login">
             <Navbar />
             <Name />
             <Login />
-            {/* <Home /> */}
+            {/* <Home /> */ }
           </Route>
 
           <Route exact path="/game1">
             <Cabinet />
-            {/* <Touchcontrols/> */}
+            {/* <Touchcontrols/> */ }
           </Route>
           <Route exact path="/rpgBattle">
             <RpgBattle />
-            {/* <Touchcontrols/> */}
+            {/* <Touchcontrols/> */ }
           </Route>
 
           <Route exact path="*" redirect="/" />
