@@ -3,6 +3,7 @@
   height: 800px;
   position: absolute;
   z-index: 1;
+  /* text-align: left; */
 }
 
 .container {
@@ -54,10 +55,17 @@
     */
 
 .two {
-  background-color: blue;
+  /* background-color: blue; */
   grid-area: sec2;
-  margin: 20px;
+  margin: 20px 50px 50px 50px;
   z-index: 2;
+}
+
+.two img {
+  width: 100%;
+  height: 50%;
+  z-index: 3;
+  position: relative;
 }
 
 .three {
