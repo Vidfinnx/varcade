@@ -20,6 +20,7 @@ import Home from "./components/Home";
 // import HomeBackground from "./components/HomeBackground";
 import Name from "./components/Name";
 import Scoreboard from "./components/Scoreboard";
+import RpgBattle from "./rpgBattle/RpgBattle";
 
 const httpLink = createHttpLink({
   uri: "/graphql", //The URI of the GraphQL endpoint that Apollo Client will communicate with.
@@ -45,34 +46,38 @@ const client = new ApolloClient({
 });
 function App() {
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={ client }>
       <Router>
         <Switch>
           <Route exact path="/">
             <Navbar />
-            <Scoreboard/>
+            {/* <Scoreboard /> */ }
             <Name />
             <Home />
-            {/* <HomeBackground /> */}
+            {/* <HomeBackground /> */ }
           </Route>
 
           <Route exact path="/signup">
             <Navbar />
             <Name />
             <Signup />
-            {/* <Home /> */}
+            {/* <Home /> */ }
           </Route>
 
           <Route exact path="/login">
             <Navbar />
             <Name />
             <Login />
-            {/* <Home /> */}
+            {/* <Home /> */ }
           </Route>
 
           <Route exact path="/game1">
             <Cabinet />
-            {/* <Touchcontrols/> */}
+            {/* <Touchcontrols/> */ }
+          </Route>
+          <Route exact path="/rpgBattle">
+            <RpgBattle />
+            {/* <Touchcontrols/> */ }
           </Route>
 
           <Route exact path="*" redirect="/" />

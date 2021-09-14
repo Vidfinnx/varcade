@@ -44,64 +44,80 @@ button {
 
 #RpgHeroHealthBar {
   
- width: 100px;
- position: absolute;
-width: 100px;
-height: 10px;
-left: 125px;
-top: 175px;
+
+position: absolute;
+width: 140px;
+height: 5px;
+left: 155px;
+top: 135px;
+font-size: 12px;
 }
 
 .heroSpot {
 
 position: absolute;
 pointer-events: none;
-left: -80px;
-top: 20px;
+left: 150px;
+top: 45px;
 }
 #moveDiv {
-background-image: url('./Assets/Images/moveWindow.png');
-position: absolute;
+/* background-image: url('./Assets/Images/moveWindow.png'); */
+/* position: absolute;
 width: 73px;
 height: 186px;
-left: 51px;
-top: 61px;
-
+left: 71px;
+top: 61px; */
+/* 
 border: 2px solid #FFFFFF;
 box-sizing: border-box;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 .enemySpot {
 position: absolute;
-left: 540px;
-top: -40px;
+left: 440px;
+top: 0px;
 }
 
 #RpgEnemyHealthBar {
- width: 200px;
+
 position: absolute;
-width: 197px;
+width: 220px;
 height: 11px;
-left: 533px;
-top: 175px;
+
+bottom:88px;
+right: 94px;
 }
 
+#sephName{
+  margin-top:20px;
+ 
+  /* background-color:rgb(39, 39, 39); */
+}
+#enemyContainer{
+  position: absolute;
+  margin-left:465px;
+  margin-top:170px;
+  width: 318px;
+  height: 95px;
+  background:none;
 
-#heroMoveDiv {
+
+}
+/* #heroMoveDiv {
   text-align: center;
  margin-left:4px;
  margin-top: 15px;
  font-size: 10px;
  line-height: 28px;
-}
+} */
 
 #centralTextArea {
   position: absolute;
   font-family: 'Press Start 2P';
   font-size: 10px;
-  margin-left:250px;
-  margin-top: 25px;
+  margin-left:295px;
+  margin-top: 45px;
   text-align: center;
   color: white;
 
@@ -110,10 +126,53 @@ top: 175px;
 
 #scoreDiv{
   position: absolute;
-    font-family: 'Press Start 2P';
+  font-family: 'Press Start 2P';
   font-size: 10px;
-   margin-left:390px;
-  margin-top: 250px;
+  margin-left:388px;
+  margin-top: 200px;
   color: white;
 
+}
+#scoreTextDiv{
+  position: absolute;
+  font-size: 10px;
+  margin-left:410px;
+  margin-top: 230px;
+  color: white;
+  font-size:15px;
+}
+#movesWindow{
+ display: inline-flex;
+float:left;
+margin-left: 50px;
+  width: 318px;
+  height: 95px;
+
+
+  top:165px;
+background: none;
+  font-size: 12px;
+}
+
+#heroMoves{
+  display: inline-flex;
+  margin-left: -120px;
+  margin-top: 10px;
+ 
+  text-align: left;
+
+  
+
+}
+
+.nes-btn{
+
+  width:65px;
+  height: 25px;
+  font-size: 7.1px;
+
+}
+.title{
+  height:24px;
+  font-size: 8px;
 }
