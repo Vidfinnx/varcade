@@ -25,6 +25,9 @@
   },
   "homepage": "https://github.com/Vidfinnx/varcade#readme",
   "dependencies": {
-    "mongoose": "^6.0.5"
+    "dialog-polyfill": "^0.5.6",
+    "mongoose": "^6.0.5",
+    "react-responsive-spritesheet": "^2.3.9",
+    "use-sound": "^4.0.1"
   }
 }

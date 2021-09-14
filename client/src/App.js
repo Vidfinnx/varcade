@@ -49,7 +49,6 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Navbar />
             <Name />
             {/* <Home /> */}
             <GamesComp />
@@ -57,14 +56,12 @@ function App() {
           </Route>
 
           <Route exact path="/signup">
-            <Navbar />
             <Name />
             <Signup />
             {/* <Home /> */}
           </Route>
 
           <Route exact path="/login">
-            <Navbar />
             <Name />
             <Login />
             {/* <Home /> */}
