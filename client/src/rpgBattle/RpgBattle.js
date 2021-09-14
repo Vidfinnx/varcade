@@ -9,7 +9,7 @@ import useSound from 'use-sound';
 import battleTheme from './Assets/Audio/battleTheme.mp3';
 import cloudAtkSound from './Assets/Audio/cloudAtkSound.mp3';
 import sephAtkSound from './Assets/Audio/sephAtkSound.mp3';
-import victoryTheme from './Assets/Audio/victoryTheme.mp3';
+import victoryTheme from './Assets/Audio/victoryClip.mp3';
 
 const RpgBattle = () => {
     const [playVictory, { stopVictory }] = useSound(victoryTheme, { volume: 0.25, soundEnabled: true })
@@ -45,7 +45,6 @@ const RpgBattle = () => {
     function resetGame() {
         setEnemeyState({ hp: 400 })
         setHeroState({ hp: 400 })
-        setScoreText({ score: 0 })
         setHeroText({ text: null })
         setEnemyText({ text: null })
     }
@@ -54,9 +53,11 @@ const RpgBattle = () => {
         if (heroState.hp <= 0) {
             alert(`You were defeated... Your score was ${scoreText.score}... what a shame!`)
             resetGame()
-        } else if (enemyState.hp <= 0) {
+        }
+        if (enemyState.hp <= 0) {
             setModal({ show: true })
             stop()
+            setEnemeyState({ hp: 400 })
             playVictory()
             resetGame()
         }
@@ -72,12 +73,13 @@ const RpgBattle = () => {
         let total = enemyHp - moveDmg
         let addScore = scoreText.score + 1
 
-        setEnemeyState({ hp: total })
-        setScoreText({ score: addScore })
-        setEnemyText({ text: null })
         setHeroText({
             text: "Cloud used " + moveName + " for " + moveDmg + " damage!"
         })
+        setEnemeyState({ hp: total })
+        setScoreText({ score: addScore })
+        setEnemyText({ text: null })
+
         randomEnemyAtk()
     }
 
@@ -121,12 +123,12 @@ const RpgBattle = () => {
 
     return (
         <div id="rpgWrapper">
-
+            <a href="http://localhost:3000/varcade" id="exitBtn">Exit</a>
             <dialog className="nes-dialog" id="dialog-default" name="modalWindow" open={ modal } >
                 <form method="dialog">
                     <p>Victory! Sephiroth has been eliminated. <br></br><br></br>Your score of { scoreText.score } has been submitted!</p>
                     <menu className="dialog-menu">
-                        <button className="nes-btn is-primary" id="okButton" onClick={ () => { } }>OK!</button>
+                        <button className="nes-btn is-primary" id="okButton" onClick={ () => { setScoreText({ score: 0 }); resetGame() } }>OK!</button>
                     </menu>
                 </form>
             </dialog>

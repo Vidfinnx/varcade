@@ -123,8 +123,8 @@ right: 94px;
 #musicTxt{
   position:absolute;
   color:white;
-  font-size: 12px;
-  margin-left: 378px;
+  font-size: 13px;
+  margin-left: 385px;
   margin-top: -10px;
 }
 
@@ -178,19 +178,29 @@ right: 94px;
 }
 
 #dialog-default{
-  display: absolute;
+  position: absolute;
   z-index:9999;
   width:575px;
   height:200px;
-  font-size: 12px;
-  text-align: center;
+  font-size: 13px;
+  margin-left:135px;
   top:40px;
 }
 
 #okButton{
- display: absolute;
+
  margin-top:30px;
  width:150px;
  height:40px ;
- font-size:12px;
+ font-size:13px;
+}
+
+#exitBtn{
+  position: absolute;
+  text-decoration: none;
+  text-transform: none;
+  color:white;
+  font-size: 13px;
+  left:20px;
+  top:10px;
 }
