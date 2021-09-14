@@ -51,7 +51,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Navbar />
-            {/* <Scoreboard /> */ }
+            <Scoreboard />
             <Name />
             <Home />
             {/* <HomeBackground /> */ }
