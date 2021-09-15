@@ -6,7 +6,7 @@ import Coin from '../../images/Coin.gif'
 
 
 const Scoreboard = () => {
-    const   {loading,error, data}  = useQuery(QUERY_SCORES,{variables:{},pollInterval: 5000});
+    const   {loading,error, data}  = useQuery(QUERY_SCORES,{variables:{},pollInterval: 3000});
     // const {loggedInUser, setLoggedIn} = useContext(UserContext)
   
     if (loading) return <p>Loading...</p>;

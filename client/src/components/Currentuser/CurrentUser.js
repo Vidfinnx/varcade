@@ -7,7 +7,7 @@ import './Currentuser.css'
 
 const CurrentUser = () => {
 const [thisUser, newUserScore] = useState(null)
-const {loading,error, data,} = useQuery(QUERY_USER,{variables:{username: thisUser},pollInterval: 2000});
+const {loading,error, data,} = useQuery(QUERY_USER,{variables:{username: thisUser},pollInterval: 1000});
 
 useEffect(() => {
     newUserScore(JSON.parse(localStorage.getItem('name')))

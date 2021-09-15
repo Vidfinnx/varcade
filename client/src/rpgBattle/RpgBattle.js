@@ -133,7 +133,7 @@ const RpgBattle = () => {
     return (
         <div id="rpgWrapper">
 
-            <a href="http://localhost:3000/" id="exitBtn">Exit</a>
+            <a href="https://varcadex.herokuapp.com/" id="exitBtn">Exit</a>
 
             <dialog className="nes-dialog" id="dialog-default" name="modalWindow" open={ modal } >
 
