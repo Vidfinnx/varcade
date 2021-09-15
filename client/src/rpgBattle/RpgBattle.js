@@ -16,10 +16,10 @@ import { UPDATE_SCORE } from '../utils/mutations'
 
 const RpgBattle = () => {
 
-    const [playVictory, { stopVictory }] = useSound(victoryTheme, { volume: 0.25, soundEnabled: true })
-    const [playCloudAtk, { stopCloudAtk }] = useSound(cloudAtkSound, { volume: 0.45 });
-    const [playSephAtk, { stopSephAtk }] = useSound(sephAtkSound, { volume: 0.45 });
-    const [play, { stop }] = useSound(battleTheme, { volume: 0.25, play: false });
+    const [playVictory, { stopVictory }] = useSound(victoryTheme, { volume: 0.10, soundEnabled: true })
+    const [playCloudAtk, { stopCloudAtk }] = useSound(cloudAtkSound, { volume: 0.20 });
+    const [playSephAtk, { stopSephAtk }] = useSound(sephAtkSound, { volume: 0.20 });
+    const [play, { stop }] = useSound(battleTheme, { volume: 0.10, play: false });
     const [modal, setModal] = useState(false)
     const [sendScore] = useMutation(UPDATE_SCORE)
     const [scoreText, setScoreText] = useState({
