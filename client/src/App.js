@@ -53,43 +53,43 @@ const client = new ApolloClient({
 function App() {
   const [loggedInUser, setLoggedIn] = useState("not logged in");
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={ client }>
       <Router>
         <Switch>
-      <UserContext.Provider  value={{loggedInUser, setLoggedIn}}>
-          <Route exact path="/">
-            <Navbar />
-            <Scoreboard />
-            <Name />
-            <GamesComp />
-          </Route>
-       
+          <UserContext.Provider value={ { loggedInUser, setLoggedIn } }>
+            <Route exact path="/">
+              <Navbar />
+              <Scoreboard />
+              <Name />
+              <GamesComp />
+            </Route>
 
-          <Route exact path="/signup">
-            <Navbar />
-            <Name />
-            <Signup />
-            {/* <Home /> */}
-          </Route>
 
-          <Route exact path="/login">
-           <Scoreboard/>
-            <Navbar />
-            <Name />
-            <Login />
-            {/* <Home /> */}
-          </Route>
+            <Route exact path="/signup">
+              <Navbar />
+              <Name />
+              <Signup />
+              {/* <Home /> */ }
+            </Route>
 
-      
-          <Route exact path="/game1">
-            <Cabinet />
-          </Route>
-          <Route exact path="/rpgBattle">
-            <RpgBattle />
-            {/* <Touchcontrols/> */}
-          </Route>
+            <Route exact path="/login">
+              <Scoreboard />
+              <Navbar />
+              <Name />
+              <Login />
+              {/* <Home /> */ }
+            </Route>
 
-          <Route exact path="*" redirect="/" />
+
+            <Route exact path="/game1">
+              <Cabinet />
+            </Route>
+            <Route exact path="/rpgBattle">
+              <RpgBattle />
+              {/* <Touchcontrols/> */ }
+            </Route>
+
+            <Route exact path="*" redirect="/" />
           </UserContext.Provider>
         </Switch>
       </Router>

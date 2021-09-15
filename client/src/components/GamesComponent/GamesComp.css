@@ -81,3 +81,12 @@
   margin: 20px;
   z-index: 2;
 }
+
+#cloudStanding{
+position:absolute;
+ width:60px;
+  height:60px;
+margin-left:85%;
+margin-top:2%;
+z-index: 9999;
+}
