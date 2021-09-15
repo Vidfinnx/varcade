@@ -4,7 +4,6 @@
 
 .scoreboard{
     background-color:black;
-    text-align:center;
     color:greenyellow;
     font-size:1rem;
     border:10px dotted;
@@ -21,4 +20,17 @@ td{
     padding:5px;
   
     
+}
+
+#coin {
+    float:left;
+    position:relative;
+    height:50px;
+}
+
+#coin2 {
+    position:relative;
+    float:right;
+    height: 50px;
+   
 }

@@ -21,9 +21,11 @@ code {
 }
 
 /* commented this out because it was shifitng my images to the right */
-/* #root {
-  text-align:center;
-} */
+ /* #root {
+  background-image:url('./images/Arcade3.jpg');
+  background-size:cover;
+ 
+}  */
 
 #subbutt{
   background-color:blueviolet;
@@ -31,7 +33,6 @@ code {
   border-radius:5%
   
 }
-
 
 
 .cabinet {
@@ -52,6 +53,8 @@ code {
   position: relative;
   overflow: hidden;
   padding-top: 75%;
+  width:90%;
+  margin-left:5%;
 }
 
 /* Then style the iframe to fit in the container div with full height and width */

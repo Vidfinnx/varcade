@@ -5,15 +5,15 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      console.log("get all users resolver");
-      const allusers = await User.find({}).sort({ score: -1 });
+      // console.log("get all users resolver");
+      const allusers = await User.find({}).sort({ score: -1 }).limit(4)
       console.log(allusers);
       return allusers;
     },
       user: async (parent, { username }) => {
-        console.log("one user resolver")
+        // console.log("one user resolver")
         const oneuser = await User.findOne({ username },'username score');
-        console.log(oneuser);
+        // console.log(oneuser);
         return oneuser;
       },
     //   me: async (parent, args, context) => {

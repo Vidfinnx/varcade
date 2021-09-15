@@ -7,7 +7,7 @@ import './Currentuser.css'
 
 const CurrentUser = () => {
 const [thisUser, newUserScore] = useState(null)
-const {loading,error, data,} = useQuery(QUERY_USER,{variables:{username: thisUser},pollInterval: 5000});
+const {loading,error, data,} = useQuery(QUERY_USER,{variables:{username: thisUser},pollInterval: 2000});
 
 useEffect(() => {
     newUserScore(JSON.parse(localStorage.getItem('name')))
@@ -15,7 +15,7 @@ useEffect(() => {
 
  if (loading) return <p>Loading...</p>;
  
- if (error) return `Error! ${error}`;
+ if (error) return <p style={{color:'white'}}>PLEASE LOGIN TO SAVE YOUR SCORE</p>
 
 
 
