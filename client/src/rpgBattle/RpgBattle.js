@@ -16,20 +16,15 @@ import { UPDATE_SCORE } from '../utils/mutations'
 
 const RpgBattle = () => {
 
-
-
     const [playVictory, { stopVictory }] = useSound(victoryTheme, { volume: 0.25, soundEnabled: true })
     const [playCloudAtk, { stopCloudAtk }] = useSound(cloudAtkSound, { volume: 0.45 });
     const [playSephAtk, { stopSephAtk }] = useSound(sephAtkSound, { volume: 0.45 });
     const [play, { stop }] = useSound(battleTheme, { volume: 0.25, play: false });
     const [modal, setModal] = useState(false)
-
     const [sendScore] = useMutation(UPDATE_SCORE)
-
     const [scoreText, setScoreText] = useState({
         score: 0
     })
-
     const [heroText, setHeroText] = useState({
         text: null
     })
@@ -46,31 +41,20 @@ const RpgBattle = () => {
     })
     console.log(scoreText)
 
-
-    // useEffect(() => {
-    //     setGetUserName(JSON.parse(localStorage.getItem("name")))
-    // }, [])
-
-    // const [getUserName, setGetUserName] = useState(null)
-    // console.log("*********")
-    // console.log(getUserName)
     useEffect(() => {
         setEnemeyState({ hp: 400 })
         setHeroState({ hp: 400 })
         setScoreText({ score: 0 })
-
-        // console.log(getUserName)
     }, []);
 
-    console.log("$#$#$#")
     function resetGame() {
         setEnemeyState({ hp: 400 })
         setHeroState({ hp: 400 })
         setHeroText({ text: null })
         setEnemyText({ text: null })
     }
+
     const getUserName = JSON.parse(localStorage.getItem("name"))
-    console.log(localStorage.getItem("name"))
 
     useEffect(() => {
 
@@ -85,7 +69,6 @@ const RpgBattle = () => {
             setEnemeyState({ hp: 400 })
             playVictory()
             resetGame()
-
         }
     }, [heroState.hp, enemyState.hp])
 
@@ -149,33 +132,44 @@ const RpgBattle = () => {
 
     return (
         <div id="rpgWrapper">
+
             <a href="http://localhost:3000/" id="exitBtn">Exit</a>
+
             <dialog className="nes-dialog" id="dialog-default" name="modalWindow" open={ modal } >
+
                 <form method="dialog">
                     <p>Victory! Sephiroth has been eliminated. <br></br><br></br>Your score of { scoreText.score } has been submitted!</p>
+
                     <menu className="dialog-menu">
                         <button className="nes-btn is-primary" id="okButton" onClick={ () => { setScoreText({ score: 0 }); resetGame() } }>OK!</button>
                     </menu>
+
                 </form>
             </dialog>
 
             <div id="musicContainer">
                 <p id="musicTxt">Music:</p>
+
                 <div id="musicRadio" >
+
                     <label>
                         <input type="radio" name="musicRadioBtn" className="nes-radio is-dark" onClick={ () => { play() } } />
                         <span>On</span>
                     </label>
+
                     <label>
                         <input type="radio" name="musicRadioBtn" className="nes-radio is-dark" onClick={ () => { stop() } } defaultChecked />
                         <span>Off</span>
                     </label>
+
                 </div>
             </div>
 
             <div id="RpgHeroHealthBar">
+
                 { heroHp.map((item, idx) => (
                     <RpgHeroHealthBar heroHps={ heroState.hp } key={ idx } bgcolor={ item.bgcolor } completed={ item.completed } id="heroHealthBar" />
+
                 )) }
             </div>
 
@@ -184,8 +178,11 @@ const RpgBattle = () => {
             </div>
 
             <div id="centralTextArea">
+
                 <CenterText characterName={ heroText.text } />
+
                 <div id="rpgTitle">
+
                     <CenterText characterName={ enemyText.text } />
 
                 </div>
@@ -200,11 +197,16 @@ const RpgBattle = () => {
             </div>
 
             <div id="enemyContainer" className="nes-container with-title is-centered is-dark">
+
                 <p className="title">Sephiroth</p>
+
                 <div id="RpgEnemyHealthBar">
+
                     { enemyHp.map((item, idx) => (
                         <RpgEnemyHealthBar enemyHps={ enemyState.hp } key={ idx } bgcolor={ item.bgcolor } completed={ item.completed } id="enemyHealthBar" />
+
                     )) }
+
                 </div>
             </div>
         </div >

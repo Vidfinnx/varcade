@@ -2,10 +2,8 @@
 
 @media screen and (max-width: 640px){
   #rpgWrapper{
-    
     position:static;
     transform: rotate(90deg);
-  
     height:96%;
     width: 96%;
   }
@@ -20,6 +18,30 @@ a {
   color: white;
   font-family: 'Press Start 2P';
 }
+.heroSpot {
+position: absolute;
+pointer-events: none;
+left: 150px;
+top: 45px;
+}
+
+.enemySpot {
+position: absolute;
+left: 440px;
+top: 0px;
+}
+
+.nes-btn{
+  width:65px;
+  height: 25px;
+  font-size: 7.1px;
+}
+
+.title{
+  height:24px;
+  font-size: 8px;
+}
+
 #rpgWrapper {
 display: absolute;
 background-repeat: no-repeat;
@@ -43,18 +65,7 @@ top: 135px;
 font-size: 12px;
 }
 
-.heroSpot {
-position: absolute;
-pointer-events: none;
-left: 150px;
-top: 45px;
-}
 
-.enemySpot {
-position: absolute;
-left: 440px;
-top: 0px;
-}
 
 #RpgEnemyHealthBar {
 position: absolute;
@@ -136,16 +147,6 @@ right: 94px;
 
 }
 
-.nes-btn{
-  width:65px;
-  height: 25px;
-  font-size: 7.1px;
-}
-
-.title{
-  height:24px;
-  font-size: 8px;
-}
 
 #musicContainer{
   display: inline-flex;
