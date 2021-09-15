@@ -7,7 +7,7 @@ const resolvers = {
     users: async () => {
       // console.log("get all users resolver");
       const allusers = await User.find({}).sort({ score: -1 }).limit(4)
-      console.log(allusers);
+      // console.log(allusers);
       return allusers;
     },
       user: async (parent, { username }) => {
