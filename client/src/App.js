@@ -66,7 +66,6 @@ function App() {
        
 
           <Route exact path="/signup">
-            <Navbar />
             <Name />
             <Signup />
             {/* <Home /> */}

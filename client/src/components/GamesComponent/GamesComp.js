@@ -11,19 +11,26 @@ const GamesComp = () => {
         alt="arcadeWallpaper"
       />
       <div className="container">
-        {/* <div className="one">
+        <div className="one">
           <Link to={"/game2"}>
-            <img src={"./images/pacman.png"} alt="game1" />
+            <img src={"./images/pacman.png"} alt="game2" />
           </Link>
-        </div> */}
-        <div class="two">
+        </div>
+        <div className="two">
           <Link to={"/game1"}>
             <img src={"./images/pacman.png"} alt="game1" />
           </Link>
         </div>
-
-        {/* <div class="three">3</div>
-        <div class="four">4</div> */}
+        <div className="three">
+          <Link to={"/game3"}>
+            <img src={"./images/pacman.png"} alt="game3" />
+          </Link>
+        </div>
+        <div className="four">
+          <Link to={"/game4"}>
+            <img src={"./images/pacman.png"} alt="game4" />
+          </Link>
+        </div>
       </div>
     </div>
   );
