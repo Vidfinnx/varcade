@@ -8,11 +8,14 @@ import Toplogo from '../images/catop.png'
 import { UPDATE_SCORE } from '../utils/mutations'
 import CurrentUser from '../components/Currentuser/CurrentUser'
 import Navbar from './Navbar'
+import { useContext } from 'react'
+import { UserContext } from '../UserContext'
 
 
 
 const Cabinet = () => {
-const [currentUser, newUser] = useState("")
+const {gameSelection, setGameSelected} = useContext(UserContext)
+const [currentUser, newUser] = useState(null)
 const [updateScore] = useMutation(UPDATE_SCORE)
 
 
@@ -29,9 +32,9 @@ const score = JSON.parse(localStorage.getItem('Pacman'))
         <div className="cabinet">
             <CurrentUser/>
             <Image id="toplogo" src={Toplogo} alt="broken"/>
-            <Pacman/> 
-            {/* <Excitebike/> */}
-            <button  onClick={()=>updateScore({variables: {username: currentUser, score: score }})}>Submit Score</button>
+            {gameSelection === 'Pacman' && <Pacman/>} 
+            {gameSelection === 'Excitebike' && <Excitebike/>}
+            <button id='subbutt' onClick={()=>updateScore({variables: {username: currentUser, score: score }})}>Submit Score</button>
             <Image id="joysticks" src={Arcbottom} alt="broken"/>
             </div>
     )

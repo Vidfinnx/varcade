@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { Nav } from "./Navbar.styles";
 import Auth from "../../utils/auth";
+import { useContext } from "react";
+import { useState } from "react";
+import  { UserContext }  from "../../UserContext";
 
 const Navbar = () => {
+  const {gameSelection, setGameSelected} = useContext(UserContext);
   // this creates the logout varaible
   // it runs the logout method that comes from utils/auth
   const logout = (event) => {
@@ -39,6 +43,7 @@ const Navbar = () => {
         {Auth.loggedIn() ? (
           <>
             <li>
+
               <button className="nes-badge" onClick={logout}>
                 <span id="span" className="is-dark tes">
                   Logout

@@ -15,6 +15,7 @@ const GamesComp = () => {
           <Link to={"/game2"}>
             <img src={"./images/pacman.png"} alt="game2" />
           </Link>
+
         </div>
         <div className="two">
           <Link to={"/game1"}>
