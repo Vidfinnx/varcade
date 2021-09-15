@@ -10,16 +10,26 @@ import battleTheme from './Assets/Audio/battleTheme.mp3';
 import cloudAtkSound from './Assets/Audio/cloudAtkSound.mp3';
 import sephAtkSound from './Assets/Audio/sephAtkSound.mp3';
 import victoryTheme from './Assets/Audio/victoryClip.mp3';
+import { useMutation } from '@apollo/client'
+import { UPDATE_SCORE } from '../utils/mutations'
+
 
 const RpgBattle = () => {
+
+
+
     const [playVictory, { stopVictory }] = useSound(victoryTheme, { volume: 0.25, soundEnabled: true })
     const [playCloudAtk, { stopCloudAtk }] = useSound(cloudAtkSound, { volume: 0.45 });
     const [playSephAtk, { stopSephAtk }] = useSound(sephAtkSound, { volume: 0.45 });
     const [play, { stop }] = useSound(battleTheme, { volume: 0.25, play: false });
     const [modal, setModal] = useState(false)
+
+    const [sendScore] = useMutation(UPDATE_SCORE)
+
     const [scoreText, setScoreText] = useState({
         score: 0
     })
+
     const [heroText, setHeroText] = useState({
         text: null
     })
@@ -34,34 +44,50 @@ const RpgBattle = () => {
         name: 'Sephiroth',
         hp: 400,
     })
+    console.log(scoreText)
 
+
+    // useEffect(() => {
+    //     setGetUserName(JSON.parse(localStorage.getItem("name")))
+    // }, [])
+
+    // const [getUserName, setGetUserName] = useState(null)
+    // console.log("*********")
+    // console.log(getUserName)
     useEffect(() => {
         setEnemeyState({ hp: 400 })
         setHeroState({ hp: 400 })
         setScoreText({ score: 0 })
+
+        // console.log(getUserName)
     }, []);
 
-
+    console.log("$#$#$#")
     function resetGame() {
         setEnemeyState({ hp: 400 })
         setHeroState({ hp: 400 })
         setHeroText({ text: null })
         setEnemyText({ text: null })
     }
+    const getUserName = JSON.parse(localStorage.getItem("name"))
+    console.log(localStorage.getItem("name"))
 
     useEffect(() => {
+
         if (heroState.hp <= 0) {
             alert(`You were defeated... Your score was ${scoreText.score}... what a shame!`)
             resetGame()
         }
         if (enemyState.hp <= 0) {
             setModal({ show: true })
+            sendScore({ variables: { username: getUserName, score: scoreText.score } })
             stop()
             setEnemeyState({ hp: 400 })
             playVictory()
             resetGame()
+
         }
-    }, [heroState.hp, enemyState.hp, scoreText.score])
+    }, [heroState.hp, enemyState.hp])
 
     const handleHeroAttack = (e) => {
         e.preventDefault()
@@ -123,7 +149,7 @@ const RpgBattle = () => {
 
     return (
         <div id="rpgWrapper">
-            <a href="http://localhost:3000/varcade" id="exitBtn">Exit</a>
+            <a href="http://localhost:3000/" id="exitBtn">Exit</a>
             <dialog className="nes-dialog" id="dialog-default" name="modalWindow" open={ modal } >
                 <form method="dialog">
                     <p>Victory! Sephiroth has been eliminated. <br></br><br></br>Your score of { scoreText.score } has been submitted!</p>
