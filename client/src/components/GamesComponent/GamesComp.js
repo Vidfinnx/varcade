@@ -16,7 +16,7 @@ const GamesComp = () => {
             <img src={"./images/pacman.png"} alt="game1" />
           </Link>
         </div> */}
-        <div class="two">
+        <div className="two">
           <Link to={"/game1"}>
             <img src={"./images/pacman.png"} alt="game1" />
           </Link>

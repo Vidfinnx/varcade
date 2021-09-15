@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react'
+import { useState, useEffect, useRef} from 'react'
 import {useQuery} from '@apollo/client'
 import { QUERY_USER } from '../../utils/queries'
 import './Currentuser.css'
@@ -6,18 +6,22 @@ import './Currentuser.css'
 
 
 const CurrentUser = () => {
-const [thisUser, newUserScore] = useState("")
-const {loading,error, data,} = useQuery(QUERY_USER,{variables:{username: thisUser},pollInterval: 10000});
-
-
+const [thisUser, newUserScore] = useState(null)
+const {loading,error, data,} = useQuery(QUERY_USER,{variables:{username: thisUser},pollInterval: 5000});
 
 useEffect(() => {
     newUserScore(JSON.parse(localStorage.getItem('name')))
 },[])
 
-
-if (loading) return <p>Loading...</p>;
+ if (loading) return <p>Loading...</p>;
+ 
  if (error) return `Error! ${error}`;
+
+
+
+
+
+
 
 
     return (
