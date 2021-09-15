@@ -30,6 +30,7 @@ const RpgHeroHealthBar = (props) => {
                 <div style={ fillerStyles }>
                     <span style={ labelStyles }></span>
                 </div>
+
             </div>
         </div>
     );

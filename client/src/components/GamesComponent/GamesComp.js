@@ -9,20 +9,31 @@ import Duckhunt from '../../images/duckhunt.gif'
 import Snake from '../../images/Snake.gif'
 
 
+
+import cloudStanding from '../../rpgBattle/Assets/Images/cloudStanding.gif'
+
 const GamesComp = () => {
   const { gameSelection, setGameSelected } = useContext(UserContext);
   return (
     <div>
+      <div>
+        <a href="/rpgBattle">
+          <img src={ cloudStanding } id="cloudStanding"></img>
+        </a>
+      </div>
+
       <img
         className="img"
-        src={"./images/arcadewallpaper.png"}
+        src={ "./images/arcadewallpaper.png" }
         alt="arcadeWallpaper"
       />
+
       <div className="container">
         <div className="one">
           <Link onClick={()=>setGameSelected('Excitebike')} to={"/game1"}>
             <img src={Excitebike} alt="game2" />
           </Link>
+
 
         </div>
         <div className="two">
@@ -41,7 +52,7 @@ const GamesComp = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

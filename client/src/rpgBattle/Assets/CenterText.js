@@ -1,7 +1,5 @@
 function CenterText(props) {
-
     const { characterName, moveName, damage } = props
-
 
     return (
         <div>
@@ -10,7 +8,6 @@ function CenterText(props) {
             </p>
         </div>
     )
-
 }
 
 export default CenterText

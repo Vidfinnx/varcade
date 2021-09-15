@@ -1,5 +1,8 @@
+
 import '../css/background.css'
 import { useContext,useState } from "react";
+
+
 import { UserContext } from "../UserContext";
 import { Link } from "react-router-dom";
 
@@ -12,17 +15,17 @@ import useLocalStorage from "../components/useLocalStorage";
 
 const Login = (props) => {
   const [name, setName] = useLocalStorage("name", "Bob");
-  const {loggedInUser, setLoggedIn} = useContext(UserContext)
-  const [formState, setFormState] = useState({ username:"", password:"" });
+  const { loggedInUser, setLoggedIn } = useContext(UserContext)
+  const [formState, setFormState] = useState({ username: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER); // this calls the LOGIN_Mutaion and the login method
 
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormState({ ...formState, [name]: value,});
-  
-   
+    setFormState({ ...formState, [name]: value, });
+
+
   };
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -33,8 +36,8 @@ const Login = (props) => {
     try {
       const { data } = await login({
         variables: { ...formState },
-        
-      }); 
+
+      });
       setName(data.login.user.username);
       console.log("*********");
       console.log(data);
@@ -43,7 +46,7 @@ const Login = (props) => {
     } catch (e) {
       console.error(e);
     }
-   
+
     // clear form values
 
     setFormState({
@@ -53,43 +56,45 @@ const Login = (props) => {
   };
   return (
     <Div>
-      {data ? (
+      { data ? (
         <p>
           Success! You may now head <Link to="/">back to the homepage.</Link>
         </p>
       ) : (
+
         <div className="background">
           <img src={"./images/cabinet3.png"} alt="wallpaper" />
           <form id="chupa" onSubmit={handleFormSubmit}>
             <span style={{color:'red',backgroundColor:'black'}} className="title">Login</span>
+
             <input
               className="nes-input is-dark"
               placeholder="Your username"
               name="username"
               type="text"
-              value={formState.name}
-              onChange={handleChange}
+              value={ formState.name }
+              onChange={ handleChange }
             />
             <input
               className="nes-input is-dark"
               placeholder="Your Password"
               name="password"
               type="password"
-              value={formState.password}
-              onChange={handleChange}
+              value={ formState.password }
+              onChange={ handleChange }
             />
             <button
               className="nes-btn"
-              style={{ cursor: "pointer" }}
+              style={ { cursor: "pointer" } }
               type="submit"
-              
+
             >
               Submit
             </button>
           </form>
         </div>
-      )}
-      {error && <div>{error.message}</div>}
+      ) }
+      { error && <div>{ error.message }</div> }
     </Div>
   );
 };
