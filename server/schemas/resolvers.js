@@ -6,8 +6,8 @@ const resolvers = {
   Query: {
     users: async () => {
       console.log("get all users resolver");
-      const allusers = await User.find({},{password: 0})
-      // console.log(allusers);
+      const allusers = await User.find({}).sort({ score: -1 });
+      console.log(allusers);
       return allusers;
     },
       user: async (parent, { username }) => {

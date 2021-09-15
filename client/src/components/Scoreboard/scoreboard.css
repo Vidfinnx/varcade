@@ -3,6 +3,22 @@
 }
 
 .scoreboard{
-    background-color:white;
+    background-color:black;
     text-align:center;
+    color:greenyellow;
+    font-size:1rem;
+    border:10px dotted;
+    border-color: yellow red green blue;
+}
+
+table{
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+
+td{
+    padding:5px;
+  
+    
 }

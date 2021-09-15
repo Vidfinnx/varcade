@@ -2,34 +2,33 @@ import React from 'react'
 import './scoreboard.css'
 import { useQuery } from "@apollo/client";
 import { QUERY_SCORES } from '../../utils/queries';
-// import { useContext } from "react";
-// import { UserContext } from "../../UserContext";
+
 
 const Scoreboard = () => {
-    const   {loading, data}  = useQuery(QUERY_SCORES);
+    const   {loading,error, data}  = useQuery(QUERY_SCORES);
     // const {loggedInUser, setLoggedIn} = useContext(UserContext)
   
     if (loading) return <p>Loading...</p>;
-    const leaders = data.users.map((users) => users)
-    console.log(leaders)
-   
-   
+    if (error) return `Error! ${error}`;
+    const leaders = data.users.map((users) => users);
+    // console.log(leaders)
+
 
     return (
         <div className="scoreboard">
-          <h1>LEADERBOARDS</h1>
+          <h1><span style={{backgroundColor:'blue', fontSize:'2rem'}}>LEADERBOARDS</span></h1>
           <table>
             <thead>
               <tr>
-                <td>Username</td>
-                <td>Score</td>
+                <td style={{textDecoration:'magenta double underline',color:'paleturquoise'}}>Username</td>
+                <td style={{textDecoration:'magenta double underline',color:'paleturquoise'}}>Score</td>
               </tr>
             </thead>
             <tbody>
               {leaders.map((item) => (
                 <tr>
                   <td>{item.username}</td>
-                  <td>{item.score}</td>
+                  <td style={{color:'yellow'}}>{item.score}</td>
                 </tr>
               ))}
             </tbody>

@@ -51,18 +51,26 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 function App() {
-  const [loggedInUser, setLoggedIn] = useState("not logged in");
+  const [gameSelection, setGameSelected] = useState("no game selected");
   return (
     <ApolloProvider client={ client }>
       <Router>
         <Switch>
-          <UserContext.Provider value={ { loggedInUser, setLoggedIn } }>
-            <Route exact path="/">
-              <Navbar />
-              <Scoreboard />
-              <Name />
-              <GamesComp />
-            </Route>
+
+      <UserContext.Provider  value={{gameSelection, setGameSelected}}>
+          <Route exact path="/">
+            <Navbar />
+            <Scoreboard />
+            <Name />
+            <GamesComp />
+          </Route>
+       
+
+          <Route exact path="/signup">
+            <Name />
+            <Signup />
+            {/* <Home /> */}
+          </Route>
 
 
             <Route exact path="/signup">
