@@ -89,9 +89,19 @@
   z-index: 2;
 }
 
+
+#cloudStanding{
+position:absolute;
+ width:60px;
+  height:60px;
+margin-left:85%;
+margin-top:2%;
+z-index: 9999;
+
 .four img {
   width: 100%;
   height: 50%;
   z-index: 3;
   position: relative;
+
 }

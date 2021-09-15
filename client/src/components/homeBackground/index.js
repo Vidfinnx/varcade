@@ -17,7 +17,8 @@ import { Div } from "./HomeBackground.styles";
 const HomeBackground = () => {
   return (
     <Div>
-      <img src={"./images/arcade2.png"} alt="arcade" />
+
+      <img src={ "./images/arcade2.png" } alt="arcade" />
     </Div>
   );
 };

@@ -53,9 +53,10 @@ const client = new ApolloClient({
 function App() {
   const [gameSelection, setGameSelected] = useState("no game selected");
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={ client }>
       <Router>
         <Switch>
+
       <UserContext.Provider  value={{gameSelection, setGameSelected}}>
           <Route exact path="/">
             <Navbar />
@@ -71,24 +72,32 @@ function App() {
             {/* <Home /> */}
           </Route>
 
-          <Route exact path="/login">
-           <Scoreboard/>
-            <Navbar />
-            <Name />
-            <Login />
-            {/* <Home /> */}
-          </Route>
 
-      
-          <Route exact path="/game1">
-            <Cabinet />
-          </Route>
-          <Route exact path="/rpgBattle">
-            <RpgBattle />
-            {/* <Touchcontrols/> */}
-          </Route>
+            <Route exact path="/signup">
+              <Navbar />
+              <Name />
+              <Signup />
+              {/* <Home /> */ }
+            </Route>
 
-          <Route exact path="*" redirect="/" />
+            <Route exact path="/login">
+              <Scoreboard />
+              <Navbar />
+              <Name />
+              <Login />
+              {/* <Home /> */ }
+            </Route>
+
+
+            <Route exact path="/game1">
+              <Cabinet />
+            </Route>
+            <Route exact path="/rpgBattle">
+              <RpgBattle />
+              {/* <Touchcontrols/> */ }
+            </Route>
+
+            <Route exact path="*" redirect="/" />
           </UserContext.Provider>
         </Switch>
       </Router>

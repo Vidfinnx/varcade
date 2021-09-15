@@ -20,7 +20,7 @@ const Navbar = () => {
           <i className="snes-logo"></i>
         </li>
         <li>
-          <Link className="nes-badge" to={"/"}>
+          <Link className="nes-badge" to={ "/" }>
             <span id="span" className="is-dark">
               Home
             </span>
@@ -40,9 +40,10 @@ const Navbar = () => {
             </span>
           </Link>
         </li> */}
-        {Auth.loggedIn() ? (
+        { Auth.loggedIn() ? (
           <>
             <li>
+
 
               <button className="nes-badge" onClick={logout}>
                 <span id="span" className="is-dark tes">
@@ -50,25 +51,27 @@ const Navbar = () => {
                 </span>
               </button>
             </li>
+
           </>
         ) : (
           <>
             <li>
-              <Link className="nes-badge" to={"/login"}>
+              <Link className="nes-badge" to={ "/login" }>
                 <span id="span" className="is-dark">
                   Login
                 </span>
               </Link>
             </li>
             <li>
-              <Link className="nes-badge" to={"/signup"}>
+              <Link className="nes-badge" to={ "/signup" }>
                 <span id="span" className="is-dark">
                   Signup
                 </span>
               </Link>
             </li>
+
           </>
-        )}
+        ) }
         {/* <li>
           <i class="snes-logo"></i>
         </li> */}
