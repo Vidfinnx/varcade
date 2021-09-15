@@ -39,20 +39,6 @@ const Navbar = () => {
         {Auth.loggedIn() ? (
           <>
             <li>
-              <Link className="nes-badge" to={"/game1"}>
-                <span id="span" className="is-dark">
-                  Game1
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link className="nes-badge" to={"/game2"}>
-                <span id="span" className="is-dark">
-                  Game2
-                </span>
-              </Link>
-            </li>
-            <li>
               <button className="nes-badge" onClick={logout}>
                 <span id="span" className="is-dark tes">
                   Logout

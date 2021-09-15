@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 // import { DIV } from "./Home.styles";
-import Auth from "../../utils/auth";
+// import Auth from "../../utils/auth";
 // import homeBackground from "../homeBackground";
 import { Div } from "./Home.styles";
 

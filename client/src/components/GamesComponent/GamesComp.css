@@ -3,6 +3,7 @@
   height: 800px;
   position: absolute;
   z-index: 1;
+  /* text-align: left; */
 }
 
 .container {
@@ -54,22 +55,43 @@
     */
 
 .two {
-  background-color: blue;
+  /* background-color: blue; */
   grid-area: sec2;
-  margin: 20px;
+  margin: 20px 50px 50px 50px;
   z-index: 2;
 }
 
+.two img {
+  width: 100%;
+  height: 50%;
+  z-index: 3;
+  position: relative;
+}
+
 .three {
-  background-color: green;
+  /* background-color: green; */
   grid-area: sec3;
   margin: 20px 30px 20px 20px;
   z-index: 2;
 }
 
+.three img {
+  width: 100%;
+  height: 50%;
+  z-index: 3;
+  position: relative;
+}
+
 .four {
-  background-color: yellow;
+  /* background-color: yellow; */
   grid-area: sec4;
-  margin: 20px;
+  margin: 20px 30px 20px 20px;
   z-index: 2;
+}
+
+.four img {
+  width: 100%;
+  height: 50%;
+  z-index: 3;
+  position: relative;
 }

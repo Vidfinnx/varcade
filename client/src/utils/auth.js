@@ -34,6 +34,7 @@ class AuthService {
       return true;
     }
     return false;
+    
   }
 
   // gets th token i local storage
@@ -50,6 +51,7 @@ class AuthService {
 
   logout() {
     localStorage.removeItem("id_token");
+    localStorage.removeItem("name");
     window.location.reload();
   }
 }
