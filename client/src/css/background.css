@@ -2,3 +2,11 @@
     height: 100;
     width: 100;
 }
+
+#chupa{
+    text-align:center;
+    background-image:url('../images/command.png');
+    background-size:contain;
+    background-attachment:scroll;
+    background-repeat:repeat;
+}

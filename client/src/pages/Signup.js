@@ -1,3 +1,4 @@
+import '../css/background.css'
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -5,8 +6,10 @@ import { Div } from "./Signup.styles";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import useLocalStorage from "../components/useLocalStorage";
 
 const Signup = () => {
+  const [name, setName] = useLocalStorage("name", "Bob");
   //this sets the starting values
   const [formState, setFormState] = useState({
     username: "",
@@ -35,6 +38,7 @@ const Signup = () => {
       const { data } = await addUser({
         variables: { ...formState },
       });
+      setName(data.addUser.user.username);
       console.log(data);
       console.log("USER SIGNNED IN");
       Auth.login(data.addUser.token);
@@ -51,8 +55,8 @@ const Signup = () => {
       ) : (
         <div className="background">
           <img src={"./images/cabinet3.png"} alt="wallpaper" />
-          <form onSubmit={handleFormSubmit}>
-            <span className="title">SignUp</span>
+          <form id='chupa' onSubmit={handleFormSubmit}>
+            <span style={{color:'red',backgroundColor:'black'}} className="title">SignUp</span>
             <input
               className="nes-input is-dark"
               placeholder="Your username"

@@ -6,10 +6,12 @@
   /* text-align: left; */
 }
 
+
 .container {
   height: 500px;
   display: grid;
-  grid-template-columns: auto 25% 25% 25%;
+  grid-template-columns: 24% 25% 24% 25%;
+  /* grid-template-columns: auto 25% 25% 25%; */
   /* grid-gap: 10px; */
   grid-template-rows: 85%;
   grid-template-areas: "sec1 sec2 sec3 sec4";

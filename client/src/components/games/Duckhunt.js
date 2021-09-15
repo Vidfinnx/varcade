@@ -11,7 +11,7 @@ import React from "react";
 
   return (
     <div  className="gamecontainer">
-      <iframe id="game" className="responsive-iframe"scrolling = "no" title="games" src="http://vsnake.herokuapp.com"></iframe>
+      <iframe id="game" className="responsive-iframe"scrolling = "no" title="games" src="https://duckhuntjs.com"></iframe>
     </div>
   );
 }

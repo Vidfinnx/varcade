@@ -8,8 +8,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 import Cabinet from "./components/Cabinet";
-// import Touchcontrols from "./components/Touchcontrols";
-// import Background from "./components/background";
+
 
 // import {Router} from "react router";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -23,7 +22,6 @@ import Scoreboard from './components/Scoreboard/Scoreboard'
 import { UserContext } from "./UserContext";
 import { useState } from "react";
 import CurrentUser from "./components/Currentuser/CurrentUser";
-import Resetscore from "./components/Resetscore/Resetscore";
 import RpgBattle from "./rpgBattle/RpgBattle";
 import GamesComp from "./components/GamesComponent/GamesComp";
 import Auth from "../src/utils/auth";
@@ -60,18 +58,12 @@ function App() {
       <UserContext.Provider  value={{gameSelection, setGameSelected}}>
           <Route exact path="/">
             <Navbar />
+            {Auth.loggedIn() && <CurrentUser/>}
             <Scoreboard />
             <Name />
             <GamesComp />
           </Route>
        
-
-          <Route exact path="/signup">
-            <Name />
-            <Signup />
-            {/* <Home /> */}
-          </Route>
-
 
             <Route exact path="/signup">
               <Navbar />

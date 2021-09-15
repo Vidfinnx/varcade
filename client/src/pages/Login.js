@@ -1,4 +1,8 @@
-import { useContext, useState } from "react";
+
+import '../css/background.css'
+import { useContext,useState } from "react";
+
+
 import { UserContext } from "../UserContext";
 import { Link } from "react-router-dom";
 
@@ -57,10 +61,12 @@ const Login = (props) => {
           Success! You may now head <Link to="/">back to the homepage.</Link>
         </p>
       ) : (
-        <div className="background ">
-          <img src={ "./images/cabinet3.png" } alt="wallpaper" />
-          <form onSubmit={ handleFormSubmit }>
-            <span className="title">Login</span>
+
+        <div className="background">
+          <img src={"./images/cabinet3.png"} alt="wallpaper" />
+          <form id="chupa" onSubmit={handleFormSubmit}>
+            <span style={{color:'red',backgroundColor:'black'}} className="title">Login</span>
+
             <input
               className="nes-input is-dark"
               placeholder="Your username"
