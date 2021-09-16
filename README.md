@@ -6,6 +6,9 @@
 
 http://varcadex.herokuapp.com/
 
+![image](https://user-images.githubusercontent.com/79023746/133544695-e2b2fb4a-6487-43fd-b019-ddb204b490a0.png)
+![image](https://user-images.githubusercontent.com/79023746/133544716-131655fe-b995-4d61-89ee-259f1ef19ef3.png)
+
 
 <br><br>
 
@@ -72,16 +75,16 @@ If your have any questions or comments, please feel free to reach out to the tea
 <br><br>
 
 ## Beau Barrier
-Email:<a href="mailto:beaubarrier@gmail.com"> beaubarrier@gmail.com</a> 
+Email: <a href="mailto:beaubarrier@gmail.com"> beaubarrier@gmail.com</a> 
 
 ## Louis Vincelli
-Email:<a href="mailto:louisvincelli@gmail.com">louisvincelli@gmail.com</a>
+Email: <a href="mailto:louisvincelli@gmail.com">louisvincelli@gmail.com</a>
 
 ## Edgar Lule
-Email:<a href="mailto:edgar21lc@gmail.com">edgar21lc@gmail.com</a> 
+Email: <a href="mailto:edgar21lc@gmail.com">edgar21lc@gmail.com</a> 
 
  ## Veikko Aho
-Email:<a href="mailto:VidfinnX@yahoo.com"> Vidfinnxr@yahoo.com</a> 
+Email: <a href="mailto:VidfinnX@yahoo.com"> Vidfinnxr@yahoo.com</a> 
 
 <br><br><br>
 
