@@ -70,7 +70,19 @@ Contact
 -------
 If your have any questions or comments, please feel free to reach out to the team!
 <br><br>
+
+## Beau Barrier
 Email:<a href="mailto:beaubarrier@gmail.com"> beaubarrier@gmail.com</a> 
+
+## Louis Vincelli
+Email:<a href="mailto:louisvincelli@gmail.com">louisvincelli@gmail.com</a>
+
+## Edgar Lule
+Email:<a href="mailto:edgar21lc@gmail.com">edgar21lc@gmail.com</a> 
+
+ ## Veikko Aho
+Email:<a href="mailto:VidfinnX@yahoo.com"> Vidfinnxr@yahoo.com</a> 
+
 <br><br><br>
 
 Thanks for checking out our work! Have a great day! 
