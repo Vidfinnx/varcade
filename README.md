@@ -1,9 +1,10 @@
 
---VarcadeLOGO--
-=========================
-Welcome to VARCADE
+![TOPCROPONLY](https://user-images.githubusercontent.com/79023746/133541344-ad9c7af1-4bb4-4aa6-bdfd-8bf7e7262023.png)
 
-varcadex.herokuapp.com/
+
+## Welcome to VARCADE
+
+http://varcadex.herokuapp.com/
 
 
 <br><br>
