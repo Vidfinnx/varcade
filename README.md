@@ -6,7 +6,15 @@
 
 http://varcadex.herokuapp.com/
 
-![image](https://user-images.githubusercontent.com/79023746/133544695-e2b2fb4a-6487-43fd-b019-ddb204b490a0.png)
+https://user-images.githubusercontent.com/79023746/133858227-ad65c610-05df-4d9a-874e-5984346f4e95.mov
+
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/79023746/133858324-b1dceadf-7d4f-4a17-a5d8-699d1459dfe4.png)
+
 ![image](https://user-images.githubusercontent.com/79023746/133544716-131655fe-b995-4d61-89ee-259f1ef19ef3.png)
 
 
