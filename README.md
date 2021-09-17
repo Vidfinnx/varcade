@@ -54,6 +54,12 @@ Varcade also makes use of:
 
 • Express
 
+• Bcrypt
+
+• Jsonwebtoken
+
+• Mongoose
+
 • React
 
 • Apollo Server
@@ -63,6 +69,8 @@ Varcade also makes use of:
 • MongoDB
 
 • Phaser
+
+• Nes.css
 
 
 <br><br>
