@@ -108,7 +108,9 @@ Email: <a href="mailto:louisvincelli@gmail.com">louisvincelli@gmail.com</a>
 Email: <a href="mailto:edgar21lc@gmail.com">edgar21lc@gmail.com</a> 
 
  ## Veikko Aho
-Email: <a href="mailto:VidfinnX@yahoo.com"> Vidfinnxr@yahoo.com</a> 
+ Github: https://github.com/Vidfinnx
+ 
+Email: <a href="mailto:VidfinnX@yahoo.com"> Vidfinnx@yahoo.com</a> 
 
 <br><br><br>
 
