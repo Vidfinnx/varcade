@@ -50,9 +50,17 @@ Varcade is a MERN full stack web application.
 
 Varcade also makes use of:
 
+• Node
+
+• Express
+
+• React
+
 • Apollo Server
 
 • GraphQL
+
+• MongoDB
 
 • Phaser
 
