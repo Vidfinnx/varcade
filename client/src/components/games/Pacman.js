@@ -1,7 +1,15 @@
 import React from "react";
 
 
-// function checkFocus() {
+
+
+ 
+
+  const Thegame = () => {
+
+
+
+    // function checkFocus() {
 //     if(document.activeElement == document.getElementsByTagName("iframe")[0]) {
 //       console.log('iframe has focus');
 //     } else {
@@ -18,10 +26,6 @@ import React from "react";
   //  };
   //  window.setInterval(IFocus, 300);
 
-
- 
-
-  const Thegame = () => {
 
 
   return (
