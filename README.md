@@ -112,8 +112,6 @@ Email: <a href="mailto:edgar21lc@gmail.com">edgar21lc@gmail.com</a>
  
 Email: <a href="mailto:VidfinnX@yahoo.com"> Vidfinnx@yahoo.com</a> 
 
-<br><br><br>
-
 Thanks for checking out our work! Have a great day! 
 
 License
